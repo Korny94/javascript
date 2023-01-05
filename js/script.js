@@ -124,8 +124,6 @@ console.log("is myString dog not equal to cat?", myString !== "cat") // Output: 
 
 
 
-
-
 // JOINING STRINGS TOGETHER
 
 var fullName = firstName + lastName;
