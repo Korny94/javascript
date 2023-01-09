@@ -560,3 +560,130 @@ if ((!invoicePaid) || (!productDispatched) || (!customerHasSigned)) {
 } else {
     console.log("Order Complete");
 }
+
+
+
+
+/*
+Question 1
+Console log the 3rd item in this array.
+
+var winningNumbers = [1, 76, 2, 78, 16, 7];
+*/
+
+var winningNumbers = [1, 76, 2, 78, 16, 7];
+
+var thirdItem = winningNumbers [2];
+
+console.log(thirdItem);
+
+    // OR
+
+console.log(winningNumbers[2]);
+
+
+/*
+Question 2
+Add a new item to this array using the push method and console log the new amount of items.
+
+var vegetables = ["rice", "potatoes", "porridge", "cake", "spinach"];
+*/
+
+var vegetables = ["rice", "potatoes", "porridge", "cake", "spinach"];
+
+vegetables.push("tomatoes");
+
+console.log(vegetables);
+
+console.log(vegetables.length);
+
+    // OR
+
+vegetables.unshift("tomatoes");
+
+console.log(vegetables);
+
+var countVeg = vegetables.length
+
+console.log(countVeg);
+
+
+
+/*
+Question 3
+Console log each item in this array using a for loop.
+
+var randomThings = ["pumpkin", false, 23, true, "tomato"];
+*/
+
+var randomThings = ["pumpkin", false, 23, true, "tomato"];
+
+for (var i = 0; i < randomThings.length; i++) {
+    console.log(randomThings[i]);
+}
+
+    // OR
+
+for (var i = 0; i < randomThings.length; i++) {
+    var randomT = randomThings[i];
+    console.log(randomT);
+}
+
+
+/*
+Question 4
+Loop through this array but only log the item if it is a number value.
+
+var moreThings = [14, "cat", true, 29, "fox", true, 34, 19];
+*/
+
+var moreThings = [14, "cat", true, 29, "fox", true, 34, 19];
+
+for (var i = 0; i < moreThings.length; i++) {
+    var typeOfItem = typeof moreThings[i];
+    if (typeOfItem === "number") {
+        console.log(moreThings[i]);
+    }
+}
+
+    // OR
+
+var result = [];
+
+for (var i = 0; i < moreThings.length; i++) {
+    var listItems = moreThings[i];
+    if ((listItems !== "cat") && (listItems !== true) && (listItems !== false) && (listItems !== "fox")) {
+        result.push(listItems)
+    }
+}
+console.log(result);
+
+/*
+Question 5
+Order this array alphabetically and then loop through it and log each item.
+
+var ingredients = ["water", "flour", "toothpaste", "fish lips"];
+*/
+
+var ingredients = ["water", "flour", "toothpaste", "fish lips"];
+
+var sortedIngredients = ingredients.sort();
+
+for (var i = 0; i < sortedIngredients.length; i++) {
+    console.log(sortedIngredients[i]);
+}
+
+/*
+Question 6
+Loop through this array and log every second item.
+
+var characters = ["Gob", "Michael", "George Michael", "Lindsay", "Buster", "Maeby", "Tobias", "Lucille"];
+*/
+
+var characters = ["Gob", "Michael", "George Michael", "Lindsay", "Buster", "Maeby", "Tobias", "Lucille"];
+
+for (var i = 0; i < characters.length; i++) {
+    if (i % 2 === 1) {
+        console.log(characters[i]);
+    }
+}

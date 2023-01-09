@@ -605,12 +605,31 @@ for (var f = 10; f <= 20; f++) {
 }
 // Output: 11 13 15 17 19
 
+        // LOG EVERY SECOND ITEM (1, 3, 5 etc)
+var characters = ["Gob", "Michael", "George Michael", "Lindsay", "Buster", "Maeby", "Tobias", "Lucille"];
+
+for (var i = 0; i < characters.length; i++) {
+    if (i % 2 === 0) {
+        console.log(characters[i]);
+    }
+}
+
     // EVEN
 for (var f = 10; f <= 20; f++) {
     if (f % 2 === 0)
         console.log(f);
 }
 // Output: 10 12 14 16 18 20
+
+        // LOG EVERY SECOND ITEM (2, 4, 6 etc)
+var characters = ["Gob", "Michael", "George Michael", "Lindsay", "Buster", "Maeby", "Tobias", "Lucille"];
+
+for (var i = 0; i < characters.length; i++) {
+    if (i % 2 === 1) {
+        console.log(characters[i]);
+    }
+}
+
 
 
     // SELECT & MODIFY HTML ELEMENTS document.querySelector("")
@@ -662,32 +681,70 @@ console.log(shoppingList.length);
 
     // METHODS var.method()
 
-console.log(firstName1.toLocaleLowerCase());
-// Output: isabel
+    // toLowerCase()
+console.log(firstName1.toLowerCase());
+// Output transform letters to lowecase: isabel
 
-console.log(firstName1.toLocaleUpperCase());
-// Output: ISABEL
+    // toUpperCase()
+console.log(firstName1.toUpperCase());
+// Output transform letters to uppercase: ISABEL
 
+    // PUSH()
 var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
 console.log(shoppingList, shoppingList.push("cucumbers"));
 // Output add item to end of array: (5) ['bananas', 'oranges', 'kiwis', 'milk', 'cucumbers']
 
+    // UNSHIFT()
 var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
 console.log(shoppingList, shoppingList.unshift("cucumbers"));
 // Output add item to start of array: (5) ['cucumbers', 'bananas', 'oranges', 'kiwis', 'milk']
 
+    // SHIFT()
 var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
 console.log(shoppingList, shoppingList.shift());
 // Output remove item from start of array: (3) ['oranges', 'kiwis', 'milk'] 'bananas'
 
+    // POP()
 var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
 console.log(shoppingList, shoppingList.pop());
 // Output remove item from end of array: (3) ['bananas','oranges', 'kiwis'] 'milk'
 
+    // SORT()
 var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
 console.log(shoppingList.sort());
 // Output alphabetically: ['bananas', 'oranges', 'kiwis', 'milk']
 
+    // SORT() (NUMBERS)
+var numbers = [1, 2, 3, 4, 10];
+var result = numbers.sort(function (numberA, numberB) {
+    return numberA < numberB;
+});
+console.log(result);
+// Output ascending order: [1, 2, 3, 4, 10]
+    
+
+    // forEach()
+var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
+shoppingList.forEach (function (listItem, index) {
+    console.log(listItem, index);
+});
+// Output array items and index: bananas 0 oranges 1 kiwis 2 milk 3
+
+    // FIND()
+var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
+var result = shoppingList.find(function (listItem) {
+    return listItem === "oranges";
+});
+console.log(result);
+// Output array item: oranges
+
+    // FILTER()
+var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
+var result = shoppingList.filter(function (listItems) {
+    return listItems !== "bananas";
+});
+console.log(result);
+// Output array items that are not bananas: (3) ['oranges', 'kiwis', 'milk']
 
 
 
@@ -715,8 +772,101 @@ shoppingList.push("cucumbers");
 console.log(shoppingList.sort(), shoppingList.length);
 // Output: (5) ['bananas', 'cucumbers', 'kiwis', 'milk', 'oranges'] 5
 
+        // ACCESSING ITEMS IN ARRAYS
+
+var secondItem = shoppingList [1];
+console.log(secondItem);
+// Output: cucumbers
+
+            // FOR LOOP TO ACCESS EVERY ARRAY ITEM
+
+for (var i = 0; i < shoppingList.length; i++) {
+    var shopL = shoppingList[i];
+    console.log(shopL);
+}
+// Output: bananas cucumbers kiwis milk oranges
+
+            // FOR LOOP TO ACCESS ONE ARRAY ITEM
+
+for (var i = 0; i < shoppingList.length; i++) {
+    var shopL = shoppingList[i];
+    if (shopL === "kiwis") {
+        result = shopL;
+        break;
+    }
+}
+console.log(result);
+// Output: kiwis
+
+            // FOR LOOP TO ACCESS FILTERED ARRAY ITEMS
+
+var result = [];
+for (var i = 0; i < shoppingList.length; i++) {
+    var listItems = shoppingList[i];
+    if (listItems !== "kiwis") {
+        result.push(listItems);
+    }
+}
+console.log(result);
+// Output: (4) ['bananas', 'cucumbers', 'milk', 'oranges']
+
+            // FOR LOOP TO SORT ARRAY NUMBERS
+
+var numbers = [1, 2, 3, 4, 10];
+for (var i = 1; i < numbers.length; i++) {
+    for (var j = 0; j < i; j++) {
+    if (numbers[i] < numbers[j]) {
+        var x = numbers[i];
+        numbers[i] = numbers[j];
+        numbers[j] = x;
+        }
+    }
+}
+console.log(numbers);
+// Output: [1, 2, 3, 4, 10]
+            
+
+
+    // OBJECT OBJECTS {}
+
+var dog = {
+    name: "Dexter",
+    breed: "labrador",
+    numberOfLegs: 4,
+    isFriendly: true,
+    owner: null
+}
+console.log(dog);
+// Output: {name: 'Dexter', breed: 'labrador', numberOfLegs: 4, isFriendly: true, owner: null}
+
+        // ACCESS AN OBJECTS PROPERIES USING DOT . NOTATION (dog.name)
+console.log(dog.name);
+// Output: Dexter
+
+        // EDIT AN OBJECT USING DOT . NOTATION (dog.color)
+var cat = {
+    age: 1,
+}
+cat.color = "(This is added / edited in post) red";
+console.log(cat);
+// Output: {age: 1, color: '(This is added / edited in post) red'}
 
 
 
 
 
+    // FALSY FALSE DATA
+/*
+undefined, the variable is empty and has never been set. It is ‘new’ or ‘pristine’.
+null, the variable is empty, but it has been purposefully set to empty.
+0, the variable stores an empty quantity.
+"", the variable stores an empty string.
+*/
+
+
+    // TRUTHY TRUE DATA
+/*
+[], an empty array
+{}, an empty object
+"0", the string of the number zero
+*/
