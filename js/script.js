@@ -15,9 +15,9 @@ console.log("This is script 1");
 
     // COMMA VS PLUS
 
-console.log(1 + 2);     // Output: 3
+console.log("1 plus 2 is", 1 + 2);     // Output: 3
 
-console.log(1, 2);      // Output: 1 2
+console.log("1 comma space 2 is", 1, 2);      // Output: 1 2
 
 
     // VARIABLES var
@@ -81,7 +81,25 @@ Operator    Description                 Example     Result
 
 --          decrement                   --2         1
 
+&&          logical "and" operator      &&
+            var selectedNumber = 30;
 
+            if (selectedNumber >= 10 && selectedNumber <= 50) {
+                console.log("The selected number is within range");
+            }
+
+!           logical "not" operator      !
+            var isCool = false;
+
+            if (!isCool)                EQUIVALENT TO: if (isCool === false); OR 
+            // Is Not Cool                             if (isCool !== true);
+
+||          logical "or" operator       ||
+            var isWeekend = saturday;
+
+            if ((isWeekend = saturday) || (isWeekend = sunday)) {
+                console.log("It's the weekend");
+            }
 
 */
 
@@ -411,10 +429,189 @@ if (inputIsValid === false) {
 var total = 80;
 
 if (total > 60) {
-    console.log("This is too expensive")
+    console.log("This is too expensive");
 } else {
-    console.log("This is affordable")
+    console.log("This is affordable");
 }
+
+
+var isLoggedIn2 = false;
+
+if (isLoggedIn2 === true) {
+    alert("You're logged in");
+} else {
+    console.log("You're not logged in");
+}
+
+
+var correctNumber = 10;
+
+var guessedNumber = 10;
+
+if (guessedNumber === correctNumber) {
+    var body1 = document.querySelector("body");
+    body1.style.background = "green";
+} else {
+    var body1 = document.querySelector("body");
+    body1.style.background = "red";
+}
+
+
+var numberGrade = 3;
+
+var letterGrade;
+
+if (numberGrade === 10) {
+    letterGrade = "A";
+} else if (numberGrade === 9) {
+    letterGrade = "B";
+} else if (numberGrade === 8) {
+    letterGrade = "C";
+} else {
+    if (numberGrade > 10) {
+        letterGrade = "Not a valid grade"
+    }
+    if (numberGrade < 7) {
+        letterGrade = "Test failed";
+    }
+}
+
+console.log("Your grade is", letterGrade);
+
+
+    // NESTED "if" STATEMENTS
+
+var pet = "cat";
+
+var age = 1;
+
+var isFriendly = true;
+
+if ((pet === "cat") && (age < 2) && (isFriendly = true)) {
+    console.log("Pet is accepted");
+} else {
+    console.log("Pet is NOT accepted, here's why:")
+    if (pet !== "cat") {
+        console.log("Pet must be a cat");
+    }
+    if (age >= 2) {
+        console.log("Cat must be under 2 years old");
+    }
+    if (isFriendly !== true) {
+        console.log("Cat must be friendly");
+    }
+}
+
+    // OR Logical "or ||" OPERATOR
+
+if ((pet !== "cat") || (age >= 2) || (!isFriendly)) {
+    console.log("Pet is NOT accepted");
+    if (pet !== "cat") {
+        console.log("Pet must be a cat");
+    }
+    if (age >= 2) {
+        console.log("Cat must be under 2 years old");
+    }
+    if (isFriendly !== true) {
+        console.log("Cat must be friendly");
+    }
+} else {
+    console.log("Pet is accepted");
+}
+
+
+
+    // SWITCH CONDITIONAL STATEMENT
+
+var numberGrade1 = 10;
+
+var letterGrade1;
+
+switch(numberGrade1) {
+    case 10:
+        letterGrade1 = "A";
+        break;
+    case 9:
+        letterGrade1 = "B";
+        break;
+    case 8:
+    case 7:
+        letterGrade1 = "C";
+        break;
+    default: 
+    letterGrade1 = "Test failed";
+}
+
+console.log("Your grade is", letterGrade1);
+
+
+var studentAge = "4";
+
+var school;
+
+switch(true) {
+    case studentAge >= 6 && studentAge <= 13:
+        school = "Barneskole";
+        break;
+    case studentAge >= 14 && studentAge <= 16:
+        school = "Ungdomsskole";
+        break;
+    case studentAge >= 17 && studentAge <= 19:
+        school = "Videregående skole";
+        break;
+    case studentAge > 19:
+        school = "You're too old for these schools";
+        break;
+    case studentAge < 6:
+        school = "You're too young for these schools";
+        break;
+    default:
+        school = "NaN";
+}
+
+console.log(school);
+
+
+
+    // LOOPS / for loop
+
+    // Most used 
+for (var i = 0; i <= 5; i++){
+    console.log(i);
+}
+// Output: 0 1 2 3 4 5
+// i is equal to 1; if i is less than or equal to 5; run i increment until 5
+
+
+var c = 0
+
+for (c; c <= 5; c++) {
+    console.log(c);
+}
+// Output: 0 1 2 3 4 5
+
+var b = 0
+
+for (b; b <= 5; b = b + 1) {
+    console.log(b);
+}
+// Output: 0 1 2 3 4 5
+
+
+    // ODD
+for (var f = 10; f <= 20; f++) {
+    if (f % 2 !== 0)
+        console.log(f);
+}
+// Output: 11 13 15 17 19
+
+    // EVEN
+for (var f = 10; f <= 20; f++) {
+    if (f % 2 === 0)
+        console.log(f);
+}
+// Output: 10 12 14 16 18 20
+
 
     // SELECT & MODIFY HTML ELEMENTS document.querySelector("")
 
@@ -425,7 +622,7 @@ heading1.style.color = "blue";
 
 var spanH1 = document.querySelector("span");
 
-spanH1.style.borderBottom = "5px dashed red"
+spanH1.style.borderBottom = "5px dashed red";
 
 
 var dummyText = document.querySelector(".dummyText");
@@ -437,7 +634,7 @@ var dummyText = document.querySelector("#dummyText2");
 
 dummyText2.style.background = "red";
 
-// SHORTER - SELECT & MODIFY HTML ELEMENTS
+        // SHORTER - SELECT & MODIFY HTML ELEMENTS
 
 var dummyText = document.querySelector(".dummyText3").style.color = "blue";
 
@@ -447,4 +644,79 @@ var dummyText = document.querySelector(".dummyText3").style.color = "blue";
 var heading2 = document.querySelector("h2");
 
 heading2.innerHTML = "Wadup";
+
+
+
+    // PROPERTIES var.property
+
+var firstName1 = "Isabel";
+
+console.log(firstName1.length);
+// Output: 6
+
+var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
+console.log(shoppingList.length);
+// Output nr of items: 4
+
+
+
+    // METHODS var.method()
+
+console.log(firstName1.toLocaleLowerCase());
+// Output: isabel
+
+console.log(firstName1.toLocaleUpperCase());
+// Output: ISABEL
+
+var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
+console.log(shoppingList, shoppingList.push("cucumbers"));
+// Output add item to end of array: (5) ['bananas', 'oranges', 'kiwis', 'milk', 'cucumbers']
+
+var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
+console.log(shoppingList, shoppingList.unshift("cucumbers"));
+// Output add item to start of array: (5) ['cucumbers', 'bananas', 'oranges', 'kiwis', 'milk']
+
+var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
+console.log(shoppingList, shoppingList.shift());
+// Output remove item from start of array: (3) ['oranges', 'kiwis', 'milk'] 'bananas'
+
+var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
+console.log(shoppingList, shoppingList.pop());
+// Output remove item from end of array: (3) ['bananas','oranges', 'kiwis'] 'milk'
+
+var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
+console.log(shoppingList.sort());
+// Output alphabetically: ['bananas', 'oranges', 'kiwis', 'milk']
+
+
+
+
+    // LOWERCASE LETTERS VS UPPERCASE LETTERS (NOT THE SAME!)
+
+var a = "A";
+
+var b = "a";
+
+if (a === b) {
+    console.log("The letters are the same");
+} else {
+    console.log("The letters are NOT the same");
+}
+// Output: The letters are NOT the same
+
+
+
+    // ARRAY ARRAYS
+
+var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
+
+shoppingList.push("cucumbers");
+
+console.log(shoppingList.sort(), shoppingList.length);
+// Output: (5) ['bananas', 'cucumbers', 'kiwis', 'milk', 'oranges'] 5
+
+
+
+
+
 
