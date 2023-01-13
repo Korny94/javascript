@@ -77,7 +77,7 @@
 
 // REFERENCE TYPES
 
-    // object {}, is like an object in real life. (Instead of multiple var on a person, make a person object)
+    // object {}, is like an object in real life. (Instead of multiple var on a person (name, age, sex), make a person object)
         let person = {
             name: "Karl",
             age: 28
@@ -92,9 +92,49 @@
                 console.log(person);
                 // Output: {name: 'Magnus', age: 28}
 
-    // array
+    // ARRAY
 
-    // function
+        let selectedColors = ["red", "blue", "green"];
+        console.log(selectedColors);
+        // Output: (3) ['red', 'blue', 'green']
+    
+            // ACCESS ITEM INSIDE ARRAY
+    
+                console.log(selectedColors[0]);
+                // Output: "red"
+    
+            // ADD AN ITEM TO AN ARRAY
+    
+                selectedColors[3] = 1;
+                selectedColors[4] = true;
+                console.log(selectedColors);
+                // Output: (4) ['red', 'blue', 'green', 1, true]
+
+
+    // FUNCTION = Statements that performs a task
+
+        function greet() {
+            console.log("Hello, this is a function");
+        }
+
+        greet();
+        // Output: Hello, this is a function
+
+
+        function greeting(name, lastName) {
+            console.log("Hello " + name + " " + lastName);
+        }
+
+        greeting("Karl", "Nøkling");
+        // Output: Hello Karl Nøkling
+
+
+        function addition(number) {
+            return number + number;
+        }
+
+        console.log(addition(5));
+        // Output 5+5 =: 10
 
 
 // OPERATORS 
@@ -117,4 +157,26 @@
                 Output: new value
         */
 
-    
+
+// BRACKET [] NOTATION
+
+        /*
+            Change a property
+
+            var["key"] = "new value";
+            console.log(var);
+                Output: new value
+        */
+
+
+// PROPERTIES var.property
+
+        // .length (Check how many characters / items)
+
+            let lengthColor = "blue";
+            console.log(lengthColor.length);
+            // Output number of characters: 4
+
+            let lengthOfArray = [1, 2, true, false, "orange"];
+            console.log(lengthOfArray.length);
+            // Output number of items: 5
