@@ -395,6 +395,21 @@ console.log("boolean is a", booleanTypeOf);
 // Output: boolean is a boolean
 
 
+    // "BREAK" & "CONTINUE" STATEMENTS
+
+for (var i = 0; i <= 5; i++) {
+    if(i === 3) break;
+    console.log(i);
+}
+// Output (breaks loop on 4): 0 1 2 
+
+for (var i = 0; i <= 5; i++) {
+    if(i === 4) continue;
+    console.log(i);
+}
+// Output (breaks loop on 4, continues on 5): 0 1 2 3 5
+
+
     // "IF" & "ELSE" CONDITIONAL STATEMENTS
 
 var isLoggedIn = true;
@@ -826,6 +841,21 @@ console.log(numbers);
 // Output: [1, 2, 3, 4, 10]
             
 
+            // FOR LOOP [i] TO LIST ARRAY VERTICALLY
+
+var animals = ["dog", "cat", "mouse", "sheep"]; 
+
+for (var i = 0; i < animals.length; i++) {
+    console.log(animals[i]);
+}
+// Output: dog car mouse sheep
+
+    // OR USE "FOR OF" LOOP
+
+for (var names of animals) {
+    console.log(names);
+}
+// Output: dog car mouse sheep
 
     // OBJECT OBJECTS {}
 
@@ -852,7 +882,72 @@ console.log(cat);
 // Output: {age: 1, color: '(This is added / edited in post) red'}
 
 
+        // ARRAY ARRAYS OF OBJECT OBJECTS
 
+var products = [
+    {
+        id: 327,
+        name: "Screwdriver",
+        price: 9.99
+    },
+    {
+        id: 574,
+        name: "Hammer",
+        price: 19.99
+    }
+]
+
+console.log(products);
+// Output (objects inside): (2) [{…}, {…}]
+
+
+    // OR
+
+
+var product1 = {
+    id: 327,
+    name: "Screwdriver",
+    price: 9.99
+};
+
+var product2 = {
+    id: 574,
+    name: "Hammer",
+    price: 19.99
+};
+
+var products = [product1, product2];
+
+console.log(products);
+// Output (objects inside): (2) [{…}, {…}]
+
+console.log(products[1]);
+// Output: {id: 574, name: 'Hammer', price: 19.99}
+
+console.log(products[0] === product1);
+// Output: true
+
+
+        // FOR LOOP OBJECT ARRAY
+
+for (var i = 0; i < products.length; i++) {
+var product = products[i];
+var productName = product.name;
+console.log(productName);
+}
+// Output: Screwdriver Hammer
+
+for (var i = 0; i < products.length; i++) {
+console.log(products[i]);
+console.log(products[i].name);
+}
+// Output: {id: 327, name: 'Screwdriver', price: 9.99} Screwdriver {id: 574, name: 'Hammer', price: 19.99} Hammer
+
+products.forEach(function (product, i) {
+console.log(product, i);
+console.log(product.name);
+});
+// Output: {id: 327, name: 'Screwdriver', price: 9.99} Screwdriver {id: 574, name: 'Hammer', price: 19.99} Hammer
 
 
     // FALSY FALSE DATA
