@@ -331,6 +331,8 @@ console.log("five decremented by one is", decrement);
 // Output: five decremented by one is 4
 
 
+
+
     // CONVERT NUMBERED STRING TO ACTUAL NUMBER parseInt for integer & parseFloat for decimal
 
 // INTEGER
@@ -679,6 +681,10 @@ var heading2 = document.querySelector("h2");
 
 heading2.innerHTML = "Wadup";
 
+    // ADD
+
+heading2.innerHTML += " hi";
+
 
 
     // PROPERTIES var.property
@@ -695,6 +701,10 @@ console.log(shoppingList.length);
 
 
     // METHODS var.method()
+
+    // .toString() - CONVERT NUMBER TO STRING
+
+    // .toPrecision(value) - Transform a number to a desired maximum length
 
     // toLowerCase()
 console.log(firstName1.toLowerCase());
@@ -873,6 +883,11 @@ console.log(dog);
 console.log(dog.name);
 // Output: Dexter
 
+        // EVENT ACTION . NOTIATION DOT
+
+            //.onclick          (button)
+            //.onchange         (range)
+
         // EDIT AN OBJECT USING DOT . NOTATION (dog.color)
 var cat = {
     age: 1,
@@ -895,7 +910,7 @@ var products = [
         name: "Hammer",
         price: 19.99
     }
-]
+];
 
 console.log(products);
 // Output (objects inside): (2) [{…}, {…}]
@@ -950,6 +965,136 @@ console.log(product.name);
 // Output: {id: 327, name: 'Screwdriver', price: 9.99} Screwdriver {id: 574, name: 'Hammer', price: 19.99} Hammer
 
 
+    // ASSIGN LOCAL VARIABLES INSIDE A FOR LOOP
+
+    for (var i = 0; i < products.length; i++) {
+        var product = products[i];
+        var productName = product.name;
+        console.log(productName);
+      }
+
+
+    // NEWS ITEM OBJECT LOOP ARRAY
+
+var newsItem1 = {
+    headline: "Headline 1",
+    summary: "lorem ipsum whatever man"
+};
+  
+var newsItem2 = {
+    headline: "Headline 2",
+    summary: "lorem ipsum, i said whatever man"
+};
+
+var newsItem3 = {
+    headline: "Headline 3",
+    summary: "lorem ipsum, come on man..."
+};
+
+var news = [newsItem1, newsItem2, newsItem3];
+
+    // OR BEST WAY! ARRAY OF OBJECTS!!!!
+
+var news = [
+    {
+        headline: "Headline 1",
+        summary: "lorem ipsum whatever man"
+    },
+    {
+        headline: "Headline 2",
+        summary: "lorem ipsum, i said whatever man"
+    },
+    {
+        headline: "Headline 3",
+        summary: "lorem ipsum, come on man..."
+    }
+]
+
+console.log(news);
+
+var newsItems = document.querySelector("#newsItems");
+
+for (var i = 0; i < news.length; i++) {
+
+    var item = news[i];
+    console.log(item);
+    console.log(item.headline);
+    console.log(item.summary);
+
+    newsItems.innerHTML = newsItems.innerHTML + "<h2>" + item.headline +"</h2><p>" + item.summary + "</p>";
+        // OR
+    newsItems.innerHTML += "<h2>" + item.headline +"</h2><p>" + item.summary + "</p>";
+}
+
+
+    // FIND OBJECTS IN ARRAY
+
+var myObject = product[0];
+
+    // IF myObject is undefined
+
+var myObject; // undefined
+var searchString = "Wrench";
+for (var i = 0; i < products.length; i++) {
+    
+    // Loop through all the products
+    var product = products[i]; // Set a local variable
+    if (searchString === product.name) {
+    myObject = product; // Set the matching object
+    }
+}
+console.log(myObject);
+
+    // OR SIMPLER WAY
+
+var searchString = "Wrench";
+var myObject = products.find(function (product) {
+    return product.name === searchString;
+});
+console.log(myObject);
+
+
+    // FILTERING OBJECTS IN ARRAY (EX. SHOW PRODUCTS LESS THAN 60$)
+
+var myFilteredArray = []; // empty array
+var maximumPrice = 60.0;
+for (var i = 0; i < products.length; i++) {
+    // Loop through all the products
+    var product = products[i]; // Set a local variable
+    if (product.price < maximumPrice) {
+    myFilteredArray.push(product);
+    }
+}
+console.log(myFilteredArray);
+
+    // A SIMPLER WAY
+
+var maximumPrice = 60.0;
+var myFilteredArray = products.filter(function (product) {
+    return product.price < maximumPrice;
+});
+console.log(myFilteredArray);
+
+
+
+    // SORTING OBJECTS IN ARRAY
+
+products.sort(function (productA, productB) {
+    if (productA.price > productB.price) {
+        return 1; // Move B "up" in relation to A
+    }
+    
+    if (productA.price < productB.price) {
+        return -1; // Move B "down" in relation to A
+    }
+    
+    if (productA.price === productB.price) {
+        return 0; // Don't change order
+    }
+    });
+      
+
+
     // FALSY FALSE DATA
 /*
 undefined, the variable is empty and has never been set. It is ‘new’ or ‘pristine’.
@@ -965,3 +1110,94 @@ null, the variable is empty, but it has been purposefully set to empty.
 {}, an empty object
 "0", the string of the number zero
 */
+
+
+    // FUNCTION FUNCTIONS function functionName(var) {}    To run function: functionName(value)
+
+    // SINGLE ARGUMENT 
+
+function logWord() {
+    console.log("word"); // ARGUMENT
+}
+
+logWord() // This is to run the function
+
+
+function logWord(theWord) {
+    console.log(theWord);
+}
+
+logWord("Hello");
+// Output: Hello
+
+
+    // MULTIPLE ARGUMENTS
+
+function addTwoNumbers(numberOne1, numberTwo2) {
+    var sum = numberOne1 + numberTwo2;
+    console.log(sum);
+}
+
+addTwoNumbers(3, 4);
+// Output: 7
+
+var result = addTwoNumbers(3, 12); // ASSIGN TO VARIABLE
+
+console.log(result);
+
+    // RETURN FROM A FUNCTION   return var;      CODE STOPS
+
+function doubleNumber(number1one) {
+    var double = number1one * 2;
+    return double; // Execution stops here
+    console.log("This will never run");
+}
+
+function addThreeNumbers(num1, num2, num3) {
+    return num1 + num2 * num3;
+}
+
+var result = addThreeNumbers(3, 8, 3);
+
+console.log(result);
+
+
+    // WHAT IS THIS??
+
+function pureFunction(input) {
+    var output = input;
+    return output;
+  }
+  
+  function impureFunction(input) {
+    window.output = input;
+  }
+  
+  var testA = pureFunction(1);
+  console.log(testA === 1);
+  
+  var testB = impureFunction(1);
+  console.log(testB === undefined);
+
+
+
+    // MAKE A FUNCTION DO SOMETHING TO HTML
+
+let headingh3 = document.querySelector("h3");
+let buttonh3 = document.querySelector("#buttonh3");
+
+        console.dir(buttonh3); // SHOW ALL PROPERTIES OF VAR IN CONSOLE 
+
+buttonh3.onclick = function() {
+    headingh3.innerHTML = "Changed by button";
+}
+
+    // OR
+
+let buttonh3color = document.querySelector("#buttonh3color");
+
+function changeh3color() {
+    headingh3.style.color = buttonh3color.value;
+}
+
+buttonh3color.onchange = changeh3color;

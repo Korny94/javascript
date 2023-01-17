@@ -687,3 +687,265 @@ for (var i = 0; i < characters.length; i++) {
         console.log(characters[i]);
     }
 }
+
+
+/*
+Question 1
+Console log the price property from the object below:
+
+var product = {
+	name: "Chicken feet",
+	price: 149.99,
+};
+*/
+
+var product = {
+	name: "Chicken feet",
+	price: 149.99,
+};
+
+console.log(product.price);
+// Output: 149.99
+
+
+/*
+Question 2
+Loop through the array below and console log each colour property.
+*/
+
+var animals = [
+	{
+		type: "cat",
+		colour: "black",
+	},
+	{
+		type: "elephant",
+		colour: "grey",
+	},
+	{
+		type: "dog",
+		colour: "brown",
+	},
+	{
+		type: "zebra",
+		colour: "black and white",
+	},
+];
+
+for (var i = 0; i < animals.length; i++) {
+    var animal = animals[i];
+    console.log(animal.colour);
+    }
+
+/*
+Question 3
+Loop through the array below and console log each name property only if it is on special.
+*/
+var dinnerOptions = [
+	{ name: "Fish and Dips", price: 11.95, onSpecial: true },
+	{ name: "Bacon and Frogs", price: 12.99, onSpecial: false },
+	{ name: "Mince Flies", price: 19.0, onSpecial: true },
+];
+
+for (var i = 0; i < dinnerOptions.length; i++) {
+    var nameDinner = dinnerOptions[i];
+    if(nameDinner.onSpecial === true) {
+        console.log(nameDinner.name);
+    }
+};
+
+
+/*
+Question 4
+Loop through the array below and log each person's name and surname if they are between the ages of 20 and 50 (including 20 and 50):
+*/
+
+var people = [
+	{
+		firstName: "Burt",
+		lastName: "Smacharach",
+		age: 35,
+	},
+	{
+		firstName: "Elvis",
+		lastName: "Deadly",
+		age: 55,
+	},
+	{
+		firstName: "Susan",
+		lastName: "Sarongson",
+		age: 42,
+	},
+	{
+		firstName: "Big",
+		lastName: "Gabe",
+		age: 20,
+	},
+];
+
+for (var i = 0; i < people.length; i++) {
+    var peoples = people[i];
+    if (peoples.age >= 20 && peoples.age <= 50) {
+        console.log(peoples.firstName, peoples.lastName);
+    }
+}
+
+/*
+Question 5
+Select the ul element in the HTML file, loop through the array below and create a li element containing the product name and price properties.
+*/
+
+var unorderedList = document.querySelector("#unorderedList");
+
+var products = [
+	{
+		name: "Elephant eggs",
+		price: 45.0,
+	},
+	{
+		name: "Bucket of water",
+		price: 459.99,
+	},
+	{
+		name: "4 cabbages",
+		price: 500.95,
+	},
+];
+
+for (var i = 0; i < products.length; i++) {
+    producter = products[i];
+    
+    unorderedList.innerHTML +=  "<li>" + producter.name + " - " + producter.price + "</li>";
+}
+
+/*
+Your final HTML should look like this:
+
+<ul>
+	<li>Elephant eggs - 45.00</li>
+	<li>Bucket of water - 459.99</li>
+	<li>4 cabbages - 500.95</li>
+</ul>
+*/
+
+
+
+/*
+Question 1
+Declare and call a function that logs the string "What the func is this nonsense?"
+*/
+
+function wtf(nonsense) {
+    console.log(nonsense);
+}
+
+wtf("What the func is this nonsense?")
+
+
+/*
+Question 2
+Create and call a function with two arguments, firstName and lastName.
+
+The function should log both the argument values with a space between them.
+*/
+
+function fullNamed(firstNamed, lastNamed) {
+    console.log(firstNamed, lastNamed);
+}
+
+fullNamed("Karl Magnus", "Nøkling")
+
+
+/*
+Question 3
+Create a function with two arguments, firstNumber and secondNumber.
+
+Inside the function, check the type of the arguments.
+
+If they are numbers, multiply them and return the result.
+
+If either of them are not numbers return the message: "Please supply number values".
+
+Call the function, assign the return value to a variable called result and log the variable.
+*/
+
+function totalNumber(firstNumber1, secondNumber2) {
+    if (typeof firstNumber1 !== "number" || typeof secondNumber2 !== "number") {
+        console.log("Please supply number values");
+    } else {
+        console.log(firstNumber1 * secondNumber2);
+    }
+}
+
+totalNumber(3, "four");
+
+
+/*
+Question 4
+Create a function with three arguments.
+
+Try and convert each argument to a number.
+
+If any of the arguments cannot be converted to a number, return the message: "Invalid argument types".
+
+If all arguments are numbers or can be converted to numbers, add them all and return the result.
+
+Select the p element on the page and assign the result of the function call to be its innerHTML value.
+*/
+
+function convert3Arguments(argument1, argument2, argument3) {
+    addedNumbers = parseFloat(argument1) + parseFloat(argument2) + parseFloat(argument3);
+    console.log(isNaN(addedNumbers));
+    if (isNaN(addedNumbers) === true) {
+        console.log("Invalid argument types");
+    } else {
+        document.querySelector("#question4").innerHTML = addedNumbers;
+    }
+}
+
+convert3Arguments(1, 2, 7);
+
+
+/*
+Question 5
+Select the button with the class "heading" using document.querySelector.
+
+Create a function and assign it to the onclick property of the button.
+
+The function should select the h1 element on the page and update its innerHTML without replacing the existing value.
+
+After clicking once, the innerHTML value should be Functions: Updated.
+
+Clicking the button again would mean the heading reads: Functions: Updated: Updated
+*/
+
+let headingFunctions = document.querySelector(".question5");
+
+let headingButton = document.querySelector(".heading");
+
+headingButton.onclick = function() {
+    headingFunctions.innerHTML += " Updated";
+}
+
+
+
+
+
+/*
+Question 6
+Select the button with the class title.
+
+When this is button is clicked, update the title of the page (not the heading, the HTML page title visible in the browser tab) to read: I've been updated.
+
+Hint: use console.dir(document) to view the properties available on the document object.
+*/
+
+
+
+
+/*
+Question 7
+Select the buttons with the classes red, orange and pink.
+
+Clicking on these buttons should change the background of the page to red, orange and pink respectively.
+*/
