@@ -702,6 +702,8 @@ console.log(shoppingList.length);
 
     // METHODS var.method()
 
+    // location.reload() - RELOAD REFRESH PAGE
+
     // .toString() - CONVERT NUMBER TO STRING
 
     // .toPrecision(value) - Transform a number to a desired maximum length
@@ -1200,4 +1202,19 @@ function changeh3color() {
     headingh3.style.color = buttonh3color.value;
 }
 
-buttonh3color.onchange = changeh3color;
+buttonh3color.oninput = changeh3color;
+
+
+    // SEE IF SOMETHING IS CHECKED
+
+let isItChecked = document.querySelector("#isChecked");
+
+let labelIsChecked = document.querySelector("#labelIsChecked")
+
+function isChecked() {
+    if (isItChecked.checked) {
+        labelIsChecked.innerHTML = "Yes, the checkbox is checked";
+    } else {
+        labelIsChecked.innerHTML = "No, the checkbox is not checked";
+    }
+}

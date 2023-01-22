@@ -839,7 +839,7 @@ function wtf(nonsense) {
     console.log(nonsense);
 }
 
-wtf("What the func is this nonsense?")
+wtf("What the func is this nonsense?");
 
 
 /*
@@ -878,6 +878,26 @@ function totalNumber(firstNumber1, secondNumber2) {
 }
 
 totalNumber(3, "four");
+
+    // OR
+
+function multiply(firstNumber, secondNumber) {
+
+    // find out the type of the argument values
+    var typeofFirst = typeof firstNumber;
+    var typeofSecond = typeof secondNumber;
+
+    if (typeofFirst !== "number" || typeofSecond !== "number") {
+        // as soon as a return statement is encountered the function will exit
+        return "Please supply number values";
+    }
+
+    return firstNumber * secondNumber;
+
+}
+
+var result = multiply(3, 5);
+console.log(result);
 
 
 /*
@@ -940,7 +960,23 @@ When this is button is clicked, update the title of the page (not the heading, t
 Hint: use console.dir(document) to view the properties available on the document object.
 */
 
+let titleButton = document.querySelector(".title");
 
+let title = document.querySelector("title");
+
+titleButton.onclick = function() {
+    title.innerHTML = "I've been updated.";
+}
+
+    // OR
+
+var buttonTitle = document.querySelector(".title");
+
+function changeTitle() {
+    document.title = "I've been updated";
+}
+
+buttonTitle.onclick = changeTitle;
 
 
 /*
@@ -949,3 +985,23 @@ Select the buttons with the classes red, orange and pink.
 
 Clicking on these buttons should change the background of the page to red, orange and pink respectively.
 */
+
+let redButton = document.querySelector(".red");
+
+let orangeButton = document.querySelector(".orange");
+
+let pinkButton = document.querySelector(".pink");
+
+redButton.onclick = function() {
+    document.querySelector("body").style.backgroundColor = "red";
+}
+
+orangeButton.onclick = function() {
+    document.querySelector("body").style.backgroundColor = "orange";
+}
+
+pinkButton.onclick = function() {
+    document.querySelector("body").style.backgroundColor = "pink";
+}
+
+
