@@ -1005,3 +1005,126 @@ pinkButton.onclick = function() {
 }
 
 
+
+/*
+Lesson Task 1 Questions
+Question 1
+Write code that logs the following variable to the console.
+*/
+const instrument = "guitar";
+console.log(instrument);
+
+
+/*
+Question 2
+Log the following variable to the console.
+*/
+const button = document.querySelector("button.login");
+console.dir(button);
+
+
+/*
+Question 3
+Log the following variable to the console in table format.
+*/
+const instruments = [
+    {
+        type: "guitar",
+        colour: "red",
+    },
+    {
+        type: "piano",
+        colour: "black",
+    },
+];
+
+console.table(instruments);
+
+
+/*
+Question 4
+Convert the following code to use either a const or let variables.
+*/
+const name2 = "Percival";
+let age2 = 13;
+
+
+/*
+Question 5
+Convert the following code to use either a const or let variable.
+*/
+let total2 = 0;
+total2 = total2 + 10;
+
+
+/*
+Question 6
+Convert the following code to use either a const or let variable.
+*/
+for (let i = 0; i <= 5; i++) {
+    console.log(i);
+}
+
+
+/*
+Question 7
+Convert the following to use backticks:
+
+const introduction = "Hello, my name is " + firstName2 + ".";
+*/
+const firstName2 = "Florence";
+
+const introduction = `Hello, my name is ${firstName2}.`;
+
+console.log(introduction);
+
+
+/*
+Question 8
+Convert the following to use backticks:
+const welcome = "Welcome! \n\n" +
+                "This " + title2 + " is starting today.\n\n" +
+                "Have a " + whatToHave + "!"";
+*/
+const title2 = "Big Technical Event";
+
+const whatToHave = "good time";
+
+const welcome = `Welcome! 
+This ${title2} is starting today. 
+Have a ${whatToHave}!`;
+
+console.log(welcome);
+
+
+/*
+Question 9
+Log each property in the object below.
+*/
+const car = {
+    "paint-colour": "red",
+    "number of wheels": 3
+};
+
+console.log(car["paint-colour"], car["number of wheels"]);
+// OUTPUT: red 3
+
+
+/*
+Question 10
+Add a function (method) called getExpired to the object below that logs the expired status of the object.
+
+Call the function after adding it.
+*/
+const product3 = {
+    name: "Chicken Lips",
+    price: 35,
+    expired: false,
+    getExpired: function() {
+        console.log("Is " + this.name + " expired? " + this.expired);
+    }
+}
+
+product3.getExpired();
+
+

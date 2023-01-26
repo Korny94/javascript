@@ -1,7 +1,77 @@
+// USE CONST IN ALL VARIABLE UNLESS YOU NEED TO REASSIGN THE VALUE (LIKE IN LOOPS), THEN USE LET!
+
+// END OF BODY TAG LINK JAVASCRIPT FILE
+//  <script src="/js/script.js" type="module"></script>
+    
+
+// TYPE "document" IN CONSOLE TO VIEW THE WEBSITES HTML
+// TYPE "screen" IN CONSOLE TO VIEW SCREEN INFO
+// TYPE "console.dir(document)" TO VIEW ALL POTENTIAL PROPERTIES (WAYS TO CHANGE THE WEBSITE)
+
+// IN CONSOLE, MANIPULATE THE DOM
+// document.querySelector(); (SELECT 1 ELEMENT)
+// document.querySelectorAll(); (SELECT SEVERAL ELEMENT)
+// const headingH2 = document.querySelectorAll("h2");
+// heading[0]           = first h2
+// heading[1]           = second h2
+//The argument we pass into each of these methods is the element we want to select: a tag (“h1”), a class (“.heading2”) or an id (“#accordion”).
+
     // VIEW IN CONSOLE
 
 console.log("This is script 1"); 
 // Output: This is script 1
+
+    // VIEW A TABLE OF THE ARRAY / OBJECT (TYPE IN CONSOLE!)
+
+let testArray = ["fish", "milk", "sausage"];
+console.table(testArray);
+
+    // VIEW ALL PROPERTIES OF A VARIABLE (RECOMMENDED WHEN LOGGING DOM-ELEMENTS INSTEAD OF .LOG)
+
+console.dir(testArray);
+
+    // CREATE A NEW LINE IN CONSOLE \n
+
+console.log("This sentence is \n two lines");
+
+    // CREATE A NEW LINE IN CONSOLE WITH BACKTICKS `` STRING
+
+console.log(`This sentence
+is 3
+lines`);
+
+    // ADD VARIABLES IN `` STRING WITH ${}
+
+const backticksString = "fun";
+
+console.log(`Programming is 
+so ${backticksString}`);
+
+    // STOP EXECUTION OF THE CODE AT A CERTAIN PLACE
+
+// debugger;
+
+
+    // OUTPUT AS A STRING
+
+console.log(JSON.stringify(testArray));
+
+    // OUTPUT AS AN ARRAY OR OBJECT
+
+console.dir(JSON.parse(testArray));
+
+
+    // CREATE HTML ELEMENTS
+
+const createHtml = document.querySelector("#createHtml");
+
+let createdHtml = `
+    <p>This is a paragraph</p>
+    <p>This is another paragraph</p>
+    <p>And they both were made with JavaScript</p>
+`;
+
+createHtml.innerHTML = createdHtml;
 
 
     // ALERT (POP-UP MESSAGE)
@@ -248,6 +318,7 @@ var blueCars = 3;
 var redCars = 8;
 
 var totalCars = blueCars + redCars;
+
 
 console.log(blueCars, "blue cars plus", redCars, "red cars is", totalCars, "total cars");
 // Output: 3 'blue cars plus' 8 'red cars is' 11 'total cars'
@@ -679,12 +750,29 @@ var dummyText = document.querySelector(".dummyText3").style.color = "blue";
 
 var heading2 = document.querySelector("h2");
 
+    // CHANGE
+
 heading2.innerHTML = "Wadup";
 
     // ADD
 
 heading2.innerHTML += " hi";
 
+        // OR
+
+heading2.innerHTML = heading2.innerHTML + " hi";
+
+    // Remove
+
+heading2.innerHTML = "";
+
+    // ADD OR REMOVE f.ex CLASS FOR ELEMENT .add("className") .remove("className")
+
+// heading1H1.classList.add("headingH1");
+//  OR
+// heading1H1.className = "headingH1";
+
+// heading1H1.classList.remove("headingH1");
 
 
     // PROPERTIES var.property
@@ -869,17 +957,17 @@ for (var names of animals) {
 }
 // Output: dog car mouse sheep
 
-    // OBJECT OBJECTS {}
+    // OBJECT OBJECTS {}        USE "" IF PROPERTY HAS SPACES OR HYPHENS
 
 var dog = {
     name: "Dexter",
     breed: "labrador",
-    numberOfLegs: 4,
+    "number of legs": 4,
     isFriendly: true,
     owner: null
 }
 console.log(dog);
-// Output: {name: 'Dexter', breed: 'labrador', numberOfLegs: 4, isFriendly: true, owner: null}
+// Output: {name: 'Dexter', breed: 'labrador', number of legs: 4, isFriendly: true, owner: null}
 
         // ACCESS AN OBJECTS PROPERIES USING DOT . NOTATION (dog.name)
 console.log(dog.name);
@@ -897,6 +985,16 @@ var cat = {
 cat.color = "(This is added / edited in post) red";
 console.log(cat);
 // Output: {age: 1, color: '(This is added / edited in post) red'}
+
+        // ACCESS OBJECT PROPERTIES USING SQUARE BRACKETS [] IF PROPERYNAME HAS SPACES, HYPHENS OR ONLY NUMBERS
+
+let golfclubs = {
+    "Type of club": "Driver",
+    "Club-brand": "Callaway"
+}
+
+console.log(golfclubs["Club-brand"]);
+// OUTPUT: Callaway
 
 
         // ARRAY ARRAYS OF OBJECT OBJECTS
@@ -1133,6 +1231,48 @@ logWord("Hello");
 // Output: Hello
 
 
+    // FUNCTIONS AS PROPERIES OF OBJECTS
+
+const petTest = new Object();
+
+petTest.name = "Dexter";
+petTest.age = 23;
+petTest.friendly = true;
+
+console.log(petTest);
+// OUTPUT: {name: 'Dexter', age: 23, friendly: true}
+
+    // CALL FUNCTIONS IN OBJECTS
+
+const petTest2 = {
+    "Pet name": "Dexter",
+    sayHello: function() {
+        console.log("Hello");
+    },
+    "say hello": function() {
+        console.log("Hello");
+    }
+};
+
+petTest2.sayHello();
+
+petTest2["say hello"]();
+
+
+    // ACCESS PROPERTY INSIDE AN OBJECT this.
+
+const petTest3 = {
+    name: "Gary",
+    age: 10,
+    introduction: function() {
+        console.log("Hello, my name is " + this.name + " and I am " + this.age + " years old."); 
+    }
+};
+
+petTest3.introduction();
+
+
+
     // MULTIPLE ARGUMENTS
 
 function addTwoNumbers(numberOne1, numberTwo2) {
@@ -1162,6 +1302,21 @@ function addThreeNumbers(num1, num2, num3) {
 var result = addThreeNumbers(3, 8, 3);
 
 console.log(result);
+
+    // VARIABLE INSIDE VS OUTSIDE OF FUNCTION
+
+const varTest1 = 1; // THIS RUNS ANYWHERE IN THE CODE
+
+function myFunction() {
+    const varTest2 = 2; // THIS RUNS ONLY INSIDE FUNCTION
+    console.log(varTest1, varTest2);
+}
+
+myFunction();
+// OUTPUT: 1 2
+
+// console.log(varTest2);
+// OUTPUT: ERROR varTest2 is not defined
 
 
     // WHAT IS THIS??
@@ -1218,3 +1373,74 @@ function isChecked() {
         labelIsChecked.innerHTML = "No, the checkbox is not checked";
     }
 }
+
+
+    // IMPORT / EXPORT      (VARIABLES, FUNCTIONS, IFs etc)
+
+// javascript1.js
+//    export const myExportedVariable = "My exported variable";
+
+// javascript2.js
+//    import {myExportedVariable as myImportedVariable} from "./javascript1.js";
+
+        // ONLY 1 DEFAULT EXPORT
+
+// javascript1.js
+    // const myExportedVariable = "My exported variable";
+    // export default "myExportedVariable";
+
+// javascript2.js
+    // import myImportedVariable, {myExportedVariable2 as myIV2, myExportedVariable3 as myIV3} from "./javascript1.js";
+
+// DEFAULT IMPORT CAN BE A DIFFEREN ALIAS (NAME) AS EXPORT.
+
+    // ../ TO GO UP / BACK A FOLDER ../../ TO GO UP / BACK 2 FOLDERS etc
+
+
+
+    // SAVE VARIABLE ACROSS TABS / PAGES localStorage   sessionStorage(only available in 1 tab)
+
+// const mySavedVariable = "this will be saved";
+
+// window.localStorage.setItem("varSavedAs", mySavedVariable);
+
+//      OR
+
+// localStorage.setItem("varSavedAs", "mySavedVariable");
+
+// OUTPUT (Application -> Local Storage -> url): varSavedAs = "thisWillBeSaved"
+
+
+    // REMOVE A SPECIFIC VARIABLE FROM localStorage
+
+// localStorage.removeItem("varSavedAs");
+
+
+    // REMOVE ALL VARIABLES FROM localStorage
+
+// localStorage.clear();
+
+        // OR
+
+// right click on url in application -> Local storage and hit clear
+
+
+    // GET ITEM FROM localStorage
+
+// const getVariable = localStorage.getItem("varSavedAs");
+
+// getVariable = "this will be saved"
+
+
+    // SAVE ARRAY OR OBJECT IN localStorage (NEED TO BE TURNED INTO A STRING using JSON.stringify(var))
+
+// const myArray = ["ball", "racket", "shoes"];
+
+// localStorage.setItem("myArray", JSON.stringify(myStringedArray));
+
+
+    // GET STRINIFIED ARRAY / OBJECT FROM STORAGE
+
+// const getArrayObject = localStorage.getItem("stringifiedArrayObject");
+
+// const parsedArrayObject = JSON.parse(getArrayObject);
