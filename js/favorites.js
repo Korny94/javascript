@@ -1,17 +1,45 @@
-const heart = document.querySelector("#heart");
+import products from "./exportFavorites.js";
 
-const heartClick = document.querySelector("#heartClick");
+const selectProducts = document.querySelector("#selectProducts");
 
-const clickedHeart = document.querySelector("#clickedHeart");
 
-const favorites = document.querySelector("#favorites");
+products.forEach((product) => {
+    selectProducts.innerHTML += `<div id="divProducts">
+                            <div id="hearts">
+                                <img src="/images/heart.png" alt="Image of heart, add to favorites" class="heart">
+                                <img src="/images/clickedHeart.png" alt="Image of heart, add to favorites" class="clickedHeart">
+                            </div>
+                            <div id="productName">
+                                <h2>${product.productName}</h2>
+                            </div>
+                            </div>
+                            `;
+});
 
-const divProduct = document.querySelector("#divProducts");
+const heart = document.querySelectorAll(".heart");
 
-function isChecked() {
-    if(heartClick.checked) {
+const clickedHeart = document.querySelectorAll(".clickedHeart");
+
+
+console.dir(heart);
+
+
+heart.forEach((clickHeart) => {
+    clickHeart.addEventListener("click", function(e) {
+        clickHeart.style.opacity = 0;
+    });
+});
+
+
+
+
+/*
+heart.addEventListener("click", function(e) {
+    if (heart.click) {
         clickedHeart.style.opacity = 1;
     } else {
         clickedHeart.style.opacity = 0;
     }
-}
+});
+*/
+// console.dir(products);

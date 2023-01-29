@@ -45,11 +45,10 @@ section {
     align-items: end;
 }
 
-#clickedHeart {
+.clickedHeart {
     margin-left: -3.2rem;
     position: absolute;
     scale: .8;
-    opacity: 0;
     z-index: 0;
     transition-duration: 150ms;
 }
@@ -62,11 +61,16 @@ input {
     height: 2.4rem;
 }
 
-#heart {
+.noHeart {
+    opacity: 0;
+}
+
+.heart {
     scale: .8;
     z-index: 9;
     position: absolute;
     margin-left: -3.1rem;
+    background-color: white;
 }
 
 #productName {

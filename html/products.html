@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-    <script defer src="/js/favorites.js"></script>
+    <script defer src="/js/favorites.js" type="module"></script>
     <link rel="stylesheet" href="/css/favorites.css">
 </head>
 <body>
@@ -15,9 +15,10 @@
         <a href="/html/yourFavorites.html">Your favorites</a>
     </nav>
     <section id="selectProducts">
+        <!--
         <div id="divProducts">
             <div id="hearts">
-                <input type="checkbox" id="heartClick" onclick="isChecked()">
+                <input type="checkbox" id="heartClick">
                 <label for="heartClick">
                 <img src="/images/heart.png" alt="Image of heart, add to favorites" id="heart">
                 </label>
@@ -27,6 +28,8 @@
                 <h2>Product 1</h2>
             </div>
         </div>
+        -->
+
     </section>
     <div id="favorites"></div>
     <a href="/index.html">Home</a>

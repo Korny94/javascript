@@ -813,7 +813,7 @@ var products = [
 ];
 
 for (var i = 0; i < products.length; i++) {
-    producter = products[i];
+    const producter = products[i];
     
     unorderedList.innerHTML +=  "<li>" + producter.name + " - " + producter.price + "</li>";
 }
@@ -914,7 +914,7 @@ Select the p element on the page and assign the result of the function call to b
 */
 
 function convert3Arguments(argument1, argument2, argument3) {
-    addedNumbers = parseFloat(argument1) + parseFloat(argument2) + parseFloat(argument3);
+    let addedNumbers = parseFloat(argument1) + parseFloat(argument2) + parseFloat(argument3);
     console.log(isNaN(addedNumbers));
     if (isNaN(addedNumbers) === true) {
         console.log("Invalid argument types");

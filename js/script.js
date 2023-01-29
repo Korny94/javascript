@@ -3,6 +3,7 @@
 // END OF BODY TAG LINK JAVASCRIPT FILE
 //  <script src="/js/script.js" type="module"></script>
     
+// DONT OVERWRITE VARIABLES!! 
 
 // TYPE "document" IN CONSOLE TO VIEW THE WEBSITES HTML
 // TYPE "screen" IN CONSOLE TO VIEW SCREEN INFO
@@ -58,7 +59,7 @@ console.log(JSON.stringify(testArray));
 
     // OUTPUT AS AN ARRAY OR OBJECT
 
-console.dir(JSON.parse(testArray));
+// console.dir(JSON.parse(testArray));
 
 
     // CREATE HTML ELEMENTS
@@ -90,26 +91,26 @@ console.log("1 plus 2 is", 1 + 2);     // Output: 3
 console.log("1 comma space 2 is", 1, 2);      // Output: 1 2
 
 
-    // VARIABLES var
+    // VARIABLES var (const / let)
 
-var firstName;
+let firstName;
 
 firstName = "Isabel" + " ";     
 // Output: Isabel 
 
 // OR 
 
-var lastName = "Ivaylova Staneva";
+let lastName = "Ivaylova Staneva";
 
-var whenWasIsabelBorn = "29.06.2001";
+let whenWasIsabelBorn = "29.06.2001";
 
-var howOldIsIsabel = 21;
+let howOldIsIsabel = 21;
 
-var isIsabelMean = false;
+let isIsabelMean = false;
 
-var isIsabelNice = true;
+let isIsabelNice = true;
 
-var isIsabelALion = true;
+let isIsabelALion = true;
 
 
     // OPERATORS
@@ -243,8 +244,8 @@ console.log("is 7 less than or equal to 6?", 7 <= 6);
 console.log("is 7 less than or equal to 8?", 7 <= 8); 
 // Output: True
 
-var myNumber = 7;
-var myString = "dog";
+let myNumber = 7;
+let myString = "dog";
 
 // is myNumber greater than 8?
 console.log("is myNumber 7 greater than 8?", myNumber > 8) 
@@ -266,9 +267,9 @@ console.log("is myString dog not equal to cat?", myString !== "cat")
 
     // JOINING STRINGS TOGETHER +
 
-var fullName = firstName + lastName;
+let fullName = firstName + lastName;
 
-var fullName2 = "Isabel" + " " + "Ivaylova Staneva";
+let fullName2 = "Isabel" + " " + "Ivaylova Staneva";
 
 console.log(fullName);      
 // Output: Isabel Ivaylova Staneva
@@ -277,27 +278,27 @@ console.log(fullName + " " + fullName2);
 // Output: Isabel Ivaylova Staneva Isabel Ivaylova Staneva
 
 
-var like1 = "passion";
+let like1 = "passion";
 
-var like2 = "romance";
+let like2 = "romance";
 
-var like3 = "honesty";
+let like3 = "honesty";
 
-var like4 = "loyalty";
+let like4 = "loyalty";
 
-var comma = ",";
+let comma = ",";
 
-var and = "and";
+let and = "and";
 
 console.log(fullName, "likes", like1 + comma, like2 + comma, like3, and, like4);   
 // Output: Isabel Ivaylova Staneva likes passion, romance, honesty and loyalty 
 
 
-var number1 = "10";
+let number1 = "10";
 
-var number2 = "5";
+let number2 = "5";
 
-var joinedNumber = number1 + number2;
+let joinedNumber = number1 + number2;
 
 console.log("If you put", number1, "and", number2, "together, you get", joinedNumber);      
 // Output: If you put 10 and 5 together, you get 105
@@ -305,7 +306,7 @@ console.log("If you put", number1, "and", number2, "together, you get", joinedNu
 
     // LENGTH OF STRING (HOW MANY CHARACTERS) varName.length
 
-var lengthOfString = fullName.length;
+let lengthOfString = fullName.length;
 
 console.log("There are", lengthOfString, "characters in Isabel Ivaylova Staneva including spaces");     
 // Output: There are 23 characters in Isabel Ivaylova Staneva including spaces
@@ -313,11 +314,11 @@ console.log("There are", lengthOfString, "characters in Isabel Ivaylova Staneva 
 
     // ADDING NUMBERS +
 
-var blueCars = 3;
+let blueCars = 3;
 
-var redCars = 8;
+let redCars = 8;
 
-var totalCars = blueCars + redCars;
+let totalCars = blueCars + redCars;
 
 
 console.log(blueCars, "blue cars plus", redCars, "red cars is", totalCars, "total cars");
@@ -326,11 +327,9 @@ console.log(blueCars, "blue cars plus", redCars, "red cars is", totalCars, "tota
 
     // SUBTRACTING NUMBERS -
 
-var blueCars = 3;
 
-var redCars = 8;
 
-var totalCars2 = blueCars - redCars;
+let totalCars2 = blueCars - redCars;
 
 console.log(blueCars, "blue cars minus", redCars, "red cars are", totalCars2, "total cars");
 // Output: 3 'blue cars minus' 8 'red cars are' -5 'total cars'
@@ -338,35 +337,35 @@ console.log(blueCars, "blue cars minus", redCars, "red cars are", totalCars2, "t
 
     // DIVIDING NUMBERS /
 
-var blueCars = 10;
+let blueCars2 = 10;
 
-var redCars = 4;
+let redCars2 = 4;
 
-var totalCars3 = blueCars / redCars;
+let totalCars3 = blueCars2 / redCars2;
 
-console.log(blueCars, "blue cars divided by", redCars, "red cars are", totalCars3, "total cars");
+console.log(blueCars2, "blue cars divided by", redCars2, "red cars are", totalCars3, "total cars");
 // Output: 10 'blue cars divided by' 4 'red cars are' 2.5 'total cars'
 
 
     // MULTIPLYING NUMBERS *
 
-var blueCars = 10;
+let blueCars3 = 10;
 
-var redCars = 4;
+let redCars3 = 4;
 
-var totalCars4 = blueCars * redCars;
+let totalCars4 = blueCars3 * redCars3;
 
-console.log(blueCars + " " + "blue cars times" + redCars + "red cars is" + totalCars4 + "total cars");
+console.log(blueCars3 + " " + "blue cars times" + redCars3 + "red cars is" + totalCars4 + "total cars");
 // Output: 10 'blue cars times' 4 'red cars is' 40 'total cars'
 
 
     // REMAINDER NUMBERS %
 
-var thirteen = 13;
+let thirteen = 13;
 
-var five = 5;
+let five = 5;
 
-var remainder = thirteen % five;
+let remainder = thirteen % five;
 
 console.log("the remainder of 13 divided by 5 is", remainder);
 // Output: the remainder of 13 divided by 5 is 3
@@ -374,11 +373,11 @@ console.log("the remainder of 13 divided by 5 is", remainder);
 
     // EXPONENTIATION NUMBERS ** 3^4 (3*3*3*3)
 
-var three = 3;
+let three = 3;
 
-var four = 4; 
+let four = 4; 
 
-var expo = three ** four;
+let expo = three ** four;
 
 console.log("3 to the power of 4 (3^4) is ", expo);
 // Output: 3 to the power of 4 (3^4) is  81
@@ -386,7 +385,7 @@ console.log("3 to the power of 4 (3^4) is ", expo);
 
     // INCREMENT NUMBERS ++
 
-var increment = ++three;
+let increment = ++three;
 
 console.log("three incremented by one is", increment);
 // Output: three incremented by one is 4
@@ -394,9 +393,8 @@ console.log("three incremented by one is", increment);
 
     // DECREMENT NUMBERS --
 
-var five = 5;
 
-var decrement = --five;
+let decrement = --five;
 
 console.log("five decremented by one is", decrement);
 // Output: five decremented by one is 4
@@ -408,24 +406,24 @@ console.log("five decremented by one is", decrement);
 
 // INTEGER
 
-var integer = "7";
+let integer = "7";
 
-var convertedInteger = parseInt(integer);
+let convertedInteger = parseInt(integer);
 
 // DECIMAL
 
-var decimal = "7.9";
+let decimal = "7.9";
 
-var convertedDecimal = parseFloat(decimal);
+let convertedDecimal = parseFloat(decimal);
 
-var totalNum = convertedInteger + convertedDecimal;
+let totalNum = convertedInteger + convertedDecimal;
 
 console.log("7 plus 7.9 is", totalNum);
 // Output: 7 plus 7.9 is 14.9
 
 // SIMPLIFIED
 
-var result = parseFloat("10.2") + parseInt("4");
+let result = parseFloat("10.2") + parseInt("4");
 
 console.log("10.2 plus 4 is", result);
 // Output: 10.2 plus 4 is 14.2
@@ -433,16 +431,16 @@ console.log("10.2 plus 4 is", result);
 
     // NaN (Not a Number)
 
-var number1 = 23;
+let number3 = 23;
 
-var number2 = "frfr";
+let number4 = "frfr";
 
-console.log("23 minus frfr is", number1 - number2);
+console.log("23 minus frfr is", number3 - number4);
 // Output: 23 minus frfr is NaN
 
     // Check if it is a number isNaN (true = not a number, false = a number)
 
-var isNumber = isNaN(number1 - number2);
+let isNumber = isNaN(number3 - number4);
 
 console.log("is 23 minus frfr not a number?", isNumber);
 // Output: is 23 minus frfr not a number? true
@@ -450,19 +448,19 @@ console.log("is 23 minus frfr not a number?", isNumber);
 
     // TYPEOF OPERATOR typeof
 
-var number = 5;
+let number = 5;
 
 console.log("number is a", typeof number);
 // Output: number is a number
 
-var string = "Hello";
+let string = "Hello";
 
 console.log("string is a", typeof string);
 // Output: string is a string
 
-var boolean = true;
+let boolean = true;
 
-var booleanTypeOf = typeof boolean;
+let booleanTypeOf = typeof boolean;
 
 console.log("boolean is a", booleanTypeOf);
 // Output: boolean is a boolean
@@ -470,13 +468,13 @@ console.log("boolean is a", booleanTypeOf);
 
     // "BREAK" & "CONTINUE" STATEMENTS
 
-for (var i = 0; i <= 5; i++) {
+for (let i = 0; i <= 5; i++) {
     if(i === 3) break;
     console.log(i);
 }
 // Output (breaks loop on 4): 0 1 2 
 
-for (var i = 0; i <= 5; i++) {
+for (let i = 0; i <= 5; i++) {
     if(i === 4) continue;
     console.log(i);
 }
@@ -485,7 +483,7 @@ for (var i = 0; i <= 5; i++) {
 
     // "IF" & "ELSE" CONDITIONAL STATEMENTS
 
-var isLoggedIn = true;
+let isLoggedIn = true;
 
 if (isLoggedIn === true) {
     console.log("The user is logged in");
@@ -495,9 +493,9 @@ if (isLoggedIn === true) {
 // Output: The user is logged in
 
 
-var isLoggedIn = false;
+let isLoggedIn1 = false;
 
-if (isLoggedIn === true) {
+if (isLoggedIn1 === true) {
     console.log("The user is logged in");
 } else {
     console.log("The user is logged out");
@@ -505,7 +503,7 @@ if (isLoggedIn === true) {
 // Output: The user is logged out
 
 
-var inputIsValid = false;
+let inputIsValid = false;
 
 if (inputIsValid === false) {
   // show error message
@@ -514,7 +512,7 @@ if (inputIsValid === false) {
 }
 
 
-var total = 80;
+let total = 80;
 
 if (total > 60) {
     console.log("This is too expensive");
@@ -523,7 +521,7 @@ if (total > 60) {
 }
 
 
-var isLoggedIn2 = false;
+let isLoggedIn2 = false;
 
 if (isLoggedIn2 === true) {
     alert("You're logged in");
@@ -532,22 +530,22 @@ if (isLoggedIn2 === true) {
 }
 
 
-var correctNumber = 10;
+let correctNumber = 10;
 
-var guessedNumber = 10;
+let guessedNumber = 10;
 
 if (guessedNumber === correctNumber) {
-    var body1 = document.querySelector("body");
+    let body1 = document.querySelector("body");
     body1.style.background = "green";
 } else {
-    var body1 = document.querySelector("body");
+    let body1 = document.querySelector("body");
     body1.style.background = "red";
 }
 
 
-var numberGrade = 3;
+let numberGrade = 3;
 
-var letterGrade;
+let letterGrade;
 
 if (numberGrade === 10) {
     letterGrade = "A";
@@ -569,11 +567,11 @@ console.log("Your grade is", letterGrade);
 
     // NESTED "if" STATEMENTS
 
-var pet = "cat";
+let pet = "cat";
 
-var age = 1;
+let age = 1;
 
-var isFriendly = true;
+let isFriendly = true;
 
 if ((pet === "cat") && (age < 2) && (isFriendly = true)) {
     console.log("Pet is accepted");
@@ -609,11 +607,11 @@ if ((pet !== "cat") || (age >= 2) || (!isFriendly)) {
 
 
 
-    // SWITCH CONDITIONAL STATEMENT
+    // SWITCH CONDITIONAL STATEMENT INSTEAD OF MANY IF ELSE STATEMENTS
 
-var numberGrade1 = 10;
+let numberGrade1 = 10;
 
-var letterGrade1;
+let letterGrade1;
 
 switch(numberGrade1) {
     case 10:
@@ -633,9 +631,9 @@ switch(numberGrade1) {
 console.log("Your grade is", letterGrade1);
 
 
-var studentAge = "4";
+let studentAge = "4";
 
-var school;
+let school;
 
 switch(true) {
     case studentAge >= 6 && studentAge <= 13:
@@ -661,24 +659,30 @@ console.log(school);
 
 
 
-    // LOOPS / for loop
+
+
+    // LOOPS / for loop     REPEAT SOME CODE A CERTAIN AMOUNT OF TIMES
 
     // Most used 
-for (var i = 0; i <= 5; i++){
+for (let i = 0; i <= 5; i++){
     console.log(i);
 }
 // Output: 0 1 2 3 4 5
 // i is equal to 1; if i is less than or equal to 5; run i increment until 5
 
+for (let evenCounter = 0; evenCounter <= 20; evenCounter += 2) {
+    console.log(evenCounter);
+}
 
-var c = 0
+
+let c = 0
 
 for (c; c <= 5; c++) {
     console.log(c);
 }
 // Output: 0 1 2 3 4 5
 
-var b = 0
+let b = 0
 
 for (b; b <= 5; b = b + 1) {
     console.log(b);
@@ -687,68 +691,106 @@ for (b; b <= 5; b = b + 1) {
 
 
     // ODD
-for (var f = 10; f <= 20; f++) {
+for (let f = 10; f <= 20; f++) {
     if (f % 2 !== 0)
         console.log(f);
 }
 // Output: 11 13 15 17 19
 
         // LOG EVERY SECOND ITEM (1, 3, 5 etc)
-var characters = ["Gob", "Michael", "George Michael", "Lindsay", "Buster", "Maeby", "Tobias", "Lucille"];
+let characters = ["Gob", "Michael", "George Michael", "Lindsay", "Buster", "Maeby", "Tobias", "Lucille"];
 
-for (var i = 0; i < characters.length; i++) {
+for (let i = 0; i < characters.length; i++) {
     if (i % 2 === 0) {
         console.log(characters[i]);
     }
 }
 
     // EVEN
-for (var f = 10; f <= 20; f++) {
+for (let f = 10; f <= 20; f++) {
     if (f % 2 === 0)
         console.log(f);
 }
 // Output: 10 12 14 16 18 20
 
         // LOG EVERY SECOND ITEM (2, 4, 6 etc)
-var characters = ["Gob", "Michael", "George Michael", "Lindsay", "Buster", "Maeby", "Tobias", "Lucille"];
 
-for (var i = 0; i < characters.length; i++) {
+for (let i = 0; i < characters.length; i++) {
     if (i % 2 === 1) {
         console.log(characters[i]);
     }
 }
 
+        // NESTED FOR LOOPS     RUN THE NESTED LOOP X(parent loop) AMOUNT OF TIMES
+
+for (let i = 0; i < 2; i++) {
+    for (let j = 1; j < 4; j++) {
+        console.log(j);
+    }
+}
+
+// 123 123
+
+
+
+
+    // WHILE LOOP       REPEAT SOME CODE WHILE SOME CONDITION IS TRUE
+
+/*
+let userName1 = "";
+
+while(userName1 == "") {
+    userName1 = window.prompt("Enter your name");
+}
+// THE PROMPT WILL REPEAT UNTIL USERNAME IS NOT EMPTY
+
+console.log("Hello", userName1);
+// THE PROMPT IS OVER AND IT WILL SHOW IN CONSOLE: "Hello username"
+
+
+
+    // DO WHILE LOOP    DO SOMETHING FIRST, THEN CHECK THE CONDITION, REPEAT IF CONDITION IS TRUE
+
+/*
+let userName2;
+
+do {
+    userName1 = window.prompt("Enter your name");
+} while (userName2 == "")
+*/
+
+
 
 
     // SELECT & MODIFY HTML ELEMENTS document.querySelector("")
 
-var heading1 = document.querySelector("h1");
+let heading1 = document.querySelector("h1");
 
 heading1.style.color = "blue";
 
 
-var spanH1 = document.querySelector("span");
+let spanH1 = document.querySelector("span");
 
 spanH1.style.borderBottom = "5px dashed red";
 
 
-var dummyText = document.querySelector(".dummyText");
+let dummyText = document.querySelector(".dummyText");
 
 dummyText.style.fontSize = "2rem";
 
 
-var dummyText = document.querySelector("#dummyText2");
+let dummyText2 = document.querySelector("#dummyText2");
 
 dummyText2.style.background = "red";
 
         // SHORTER - SELECT & MODIFY HTML ELEMENTS
 
-var dummyText = document.querySelector(".dummyText3").style.color = "blue";
+let dummyText3 = document.querySelector(".dummyText3").style.color = "blue";
 
 
     // CHANGE/ADD/REMOVE HTML CONTENT varName.innerHTML
 
-var heading2 = document.querySelector("h2");
+let heading2 = document.querySelector("h2");
 
     // CHANGE
 
@@ -777,18 +819,18 @@ heading2.innerHTML = "";
 
     // PROPERTIES var.property
 
-var firstName1 = "Isabel";
+let firstName1 = "Isabel";
 
 console.log(firstName1.length);
 // Output: 6
 
-var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
+let shoppingList = ["bananas", "oranges", "kiwis", "milk"];
 console.log(shoppingList.length);
 // Output nr of items: 4
 
 
 
-    // METHODS var.method()
+    // METHODS var.method()         (CAN HAVE SEVERAL IN 1 LINE OF CODE)
 
     // location.reload() - RELOAD REFRESH PAGE
 
@@ -805,71 +847,144 @@ console.log(firstName1.toUpperCase());
 // Output transform letters to uppercase: ISABEL
 
     // PUSH()
-var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
 console.log(shoppingList, shoppingList.push("cucumbers"));
 // Output add item to end of array: (5) ['bananas', 'oranges', 'kiwis', 'milk', 'cucumbers']
 
     // UNSHIFT()
-var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
 console.log(shoppingList, shoppingList.unshift("cucumbers"));
 // Output add item to start of array: (5) ['cucumbers', 'bananas', 'oranges', 'kiwis', 'milk']
 
     // SHIFT()
-var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
 console.log(shoppingList, shoppingList.shift());
 // Output remove item from start of array: (3) ['oranges', 'kiwis', 'milk'] 'bananas'
 
     // POP()
-var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
 console.log(shoppingList, shoppingList.pop());
 // Output remove item from end of array: (3) ['bananas','oranges', 'kiwis'] 'milk'
 
     // SORT()
-var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
 console.log(shoppingList.sort());
 // Output alphabetically: ['bananas', 'oranges', 'kiwis', 'milk']
 
     // SORT() (NUMBERS)
-var numbers = [1, 2, 3, 4, 10];
-var result = numbers.sort(function (numberA, numberB) {
+let numbers = [1, 2, 3, 4, 10];
+let result2 = numbers.sort(function (numberA, numberB) {
     return numberA < numberB;
 });
-console.log(result);
+console.log(result2);
 // Output ascending order: [1, 2, 3, 4, 10]
-    
 
-    // forEach()
-var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
-shoppingList.forEach (function (listItem, index) {
-    console.log(listItem, index);
+
+    // indexOf() FIND OUT WHICH FIRST INDEX A CHARACTER IS AT
+    
+const userNamed = "Johnny"
+
+const secondIndex = userNamed.indexOf("h");
+
+console.log(secondIndex);
+
+    // lastIndexOf() FIND OUT WHICH FIRST INDEX A CHARACTER IS AT
+
+const fourthIndex = userNamed.lastIndexOf("n");
+
+console.log(fourthIndex);
+
+
+    // charAt() FIND OUT WHICH LETTER IS AT LENGTH
+
+const secondLetter = userNamed.charAt(1);
+
+console.log(secondLetter);
+// Output: o
+    
+    // trim() GET RID OF EMPTY SPACES NEXT TO STRINGS
+
+const emptySpaces = "   Hello    ";
+
+console.log(emptySpaces.trim());
+// Output: |Hello|
+
+    // replace() / replaceAll() REPLACE CHARACTERS WITH SOMETHING ELSE
+
+const replaceCharacters = "932-394-287";
+
+console.log(replaceCharacters.replaceAll("-", "/"));
+// Output: 932/394/287
+
+    // slice() EXTRACT FROM OLD STRING AND RETURN TO NEW STRING 
+                // slice(firstIndex, lastIndex)
+
+const fullName3 = "John Doe";
+
+let firstName3;
+
+let lastName3; 
+
+firstName3 = fullName3.slice(0, 4);
+
+lastName3 = fullName3.slice(5, );
+
+console.log(firstName3);
+// Output: John
+
+console.log(lastName3);
+// Output: "Doe"
+
+let firstName4;
+
+let lastName4;
+
+let fullName4 = "Karl Magnus";
+
+firstName4 = fullName4.slice(0, fullName4.indexOf(" "));
+lastName4 = fullName4.slice(fullName4.indexOf(" ") + 1);
+
+console.log(firstName4);
+
+console.log(lastName4);
+
+
+    // forEach() DO SOMETHING FOR EACH ITEM INSIDE ARRAY
+shoppingList.forEach (function (listItem, index, arr) {
+    console.log(listItem, index, arr);
 });
-// Output array items and index: bananas 0 oranges 1 kiwis 2 milk 3
+// Output array items and index: bananas 0 (array) oranges 1 (array) kiwis 2 (array) milk 3 (array)
 
     // FIND()
-var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
-var result = shoppingList.find(function (listItem) {
+let result3 = shoppingList.find(function (listItem) {
     return listItem === "oranges";
 });
-console.log(result);
+console.log(result3);
 // Output array item: oranges
 
     // FILTER()
-var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
-var result = shoppingList.filter(function (listItems) {
+let result4 = shoppingList.filter(function (listItems) {
     return listItems !== "bananas";
 });
-console.log(result);
+console.log(result4);
 // Output array items that are not bananas: (3) ['oranges', 'kiwis', 'milk']
+
+    // RANDOM() GENERATE A SOMETHING RANDOM LIKE A NUMBER
+
+let randomNumber = Math.random();
+
+console.dir(randomNumber);
+// Output A random number between 0.00 and 1 (DEFAULT): 
+
+let die = Math.floor(Math.random() * 6) + 1;
+
+console.dir(die);
+// Output A random number between 1 and 6 (rounded down "Math.floor"):
 
 
 
     // LOWERCASE LETTERS VS UPPERCASE LETTERS (NOT THE SAME!)
 
-var a = "A";
+let a = "A";
 
-var b = "a";
+let b1 = "a";
 
-if (a === b) {
+if (a === b1) {
     console.log("The letters are the same");
 } else {
     console.log("The letters are NOT the same");
@@ -880,7 +995,6 @@ if (a === b) {
 
     // ARRAY ARRAYS
 
-var shoppingList = ["bananas", "oranges", "kiwis", "milk"];
 
 shoppingList.push("cucumbers");
 
@@ -889,22 +1003,22 @@ console.log(shoppingList.sort(), shoppingList.length);
 
         // ACCESSING ITEMS IN ARRAYS
 
-var secondItem = shoppingList [1];
+let secondItem = shoppingList [1];
 console.log(secondItem);
 // Output: cucumbers
 
             // FOR LOOP TO ACCESS EVERY ARRAY ITEM
 
-for (var i = 0; i < shoppingList.length; i++) {
-    var shopL = shoppingList[i];
+for (let i = 0; i < shoppingList.length; i++) {
+    let shopL = shoppingList[i];
     console.log(shopL);
 }
 // Output: bananas cucumbers kiwis milk oranges
 
             // FOR LOOP TO ACCESS ONE ARRAY ITEM
 
-for (var i = 0; i < shoppingList.length; i++) {
-    var shopL = shoppingList[i];
+for (let i = 0; i < shoppingList.length; i++) {
+    let shopL = shoppingList[i];
     if (shopL === "kiwis") {
         result = shopL;
         break;
@@ -915,51 +1029,55 @@ console.log(result);
 
             // FOR LOOP TO ACCESS FILTERED ARRAY ITEMS
 
-var result = [];
-for (var i = 0; i < shoppingList.length; i++) {
-    var listItems = shoppingList[i];
+let result5 = [];
+for (let i = 0; i < shoppingList.length; i++) {
+    let listItems = shoppingList[i];
     if (listItems !== "kiwis") {
-        result.push(listItems);
+        result5.push(listItems);
     }
 }
-console.log(result);
+console.log(result5);
 // Output: (4) ['bananas', 'cucumbers', 'milk', 'oranges']
 
             // FOR LOOP TO SORT ARRAY NUMBERS
 
-var numbers = [1, 2, 3, 4, 10];
-for (var i = 1; i < numbers.length; i++) {
-    for (var j = 0; j < i; j++) {
-    if (numbers[i] < numbers[j]) {
-        var x = numbers[i];
-        numbers[i] = numbers[j];
-        numbers[j] = x;
+let numbers1 = [1, 2, 3, 4, 10];
+for (let i = 1; i < numbers1.length; i++) {
+    for (let j = 0; j < i; j++) {
+    if (numbers1[i] < numbers1[j]) {
+        let x = numbers[i];
+        numbers1[i] = numbers1[j];
+        numbers1[j] = x;
         }
     }
 }
-console.log(numbers);
+console.log(numbers1);
 // Output: [1, 2, 3, 4, 10]
+
+
+    // forEach() EXECUTE A GIVEN FUNCTION FOR EACH ITEM INSIDE ARRAY
             
+
 
             // FOR LOOP [i] TO LIST ARRAY VERTICALLY
 
-var animals = ["dog", "cat", "mouse", "sheep"]; 
+let animals = ["dog", "cat", "mouse", "sheep"]; 
 
-for (var i = 0; i < animals.length; i++) {
+for (let i = 0; i < animals.length; i++) {
     console.log(animals[i]);
 }
 // Output: dog car mouse sheep
 
     // OR USE "FOR OF" LOOP
 
-for (var names of animals) {
+for (let names of animals) {
     console.log(names);
 }
 // Output: dog car mouse sheep
 
     // OBJECT OBJECTS {}        USE "" IF PROPERTY HAS SPACES OR HYPHENS
 
-var dog = {
+let dog = {
     name: "Dexter",
     breed: "labrador",
     "number of legs": 4,
@@ -979,7 +1097,7 @@ console.log(dog.name);
             //.onchange         (range)
 
         // EDIT AN OBJECT USING DOT . NOTATION (dog.color)
-var cat = {
+let cat = {
     age: 1,
 }
 cat.color = "(This is added / edited in post) red";
@@ -999,7 +1117,7 @@ console.log(golfclubs["Club-brand"]);
 
         // ARRAY ARRAYS OF OBJECT OBJECTS
 
-var products = [
+let products = [
     {
         id: 327,
         name: "Screwdriver",
@@ -1019,40 +1137,40 @@ console.log(products);
     // OR
 
 
-var product1 = {
+let product1 = {
     id: 327,
     name: "Screwdriver",
     price: 9.99
 };
 
-var product2 = {
+let product2 = {
     id: 574,
     name: "Hammer",
     price: 19.99
 };
 
-var products = [product1, product2];
+let products1 = [product1, product2];
 
-console.log(products);
+console.log(products1);
 // Output (objects inside): (2) [{…}, {…}]
 
-console.log(products[1]);
+console.log(products1[1]);
 // Output: {id: 574, name: 'Hammer', price: 19.99}
 
-console.log(products[0] === product1);
+console.log(products1[0] === product1);
 // Output: true
 
 
         // FOR LOOP OBJECT ARRAY
 
-for (var i = 0; i < products.length; i++) {
-var product = products[i];
-var productName = product.name;
+for (let i = 0; i < products.length; i++) {
+let product = products[i];
+let productName = product.name;
 console.log(productName);
 }
 // Output: Screwdriver Hammer
 
-for (var i = 0; i < products.length; i++) {
+for (let i = 0; i < products.length; i++) {
 console.log(products[i]);
 console.log(products[i].name);
 }
@@ -1067,35 +1185,35 @@ console.log(product.name);
 
     // ASSIGN LOCAL VARIABLES INSIDE A FOR LOOP
 
-    for (var i = 0; i < products.length; i++) {
-        var product = products[i];
-        var productName = product.name;
+    for (let i = 0; i < products.length; i++) {
+        let product = products[i];
+        let productName = product.name;
         console.log(productName);
       }
 
 
     // NEWS ITEM OBJECT LOOP ARRAY
 
-var newsItem1 = {
+let newsItem1 = {
     headline: "Headline 1",
     summary: "lorem ipsum whatever man"
 };
   
-var newsItem2 = {
+let newsItem2 = {
     headline: "Headline 2",
     summary: "lorem ipsum, i said whatever man"
 };
 
-var newsItem3 = {
+let newsItem3 = {
     headline: "Headline 3",
     summary: "lorem ipsum, come on man..."
 };
 
-var news = [newsItem1, newsItem2, newsItem3];
+let news = [newsItem1, newsItem2, newsItem3];
 
     // OR BEST WAY! ARRAY OF OBJECTS!!!!
 
-var news = [
+let news1 = [
     {
         headline: "Headline 1",
         summary: "lorem ipsum whatever man"
@@ -1110,13 +1228,13 @@ var news = [
     }
 ]
 
-console.log(news);
+console.log(news1);
 
-var newsItems = document.querySelector("#newsItems");
+let newsItems = document.querySelector("#newsItems");
 
-for (var i = 0; i < news.length; i++) {
+for (let i = 0; i < news.length; i++) {
 
-    var item = news[i];
+    let item = news[i];
     console.log(item);
     console.log(item.headline);
     console.log(item.summary);
@@ -1129,38 +1247,38 @@ for (var i = 0; i < news.length; i++) {
 
     // FIND OBJECTS IN ARRAY
 
-var myObject = product[0];
+// let myObject = product[0];
 
     // IF myObject is undefined
 
-var myObject; // undefined
-var searchString = "Wrench";
-for (var i = 0; i < products.length; i++) {
+let myObject1; // undefined
+let searchString = "Wrench";
+for (let i = 0; i < products.length; i++) {
     
     // Loop through all the products
-    var product = products[i]; // Set a local variable
+    let product = products[i]; // Set a local variable
     if (searchString === product.name) {
-    myObject = product; // Set the matching object
+    myObject1 = product; // Set the matching object
     }
 }
-console.log(myObject);
+console.log(myObject1);
 
     // OR SIMPLER WAY
 
-var searchString = "Wrench";
-var myObject = products.find(function (product) {
+let searchString1 = "Wrench";
+let myObject2 = products.find(function (product) {
     return product.name === searchString;
 });
-console.log(myObject);
+console.log(myObject2);
 
 
     // FILTERING OBJECTS IN ARRAY (EX. SHOW PRODUCTS LESS THAN 60$)
 
-var myFilteredArray = []; // empty array
-var maximumPrice = 60.0;
-for (var i = 0; i < products.length; i++) {
+let myFilteredArray = []; // empty array
+let maximumPrice = 60.0;
+for (let i = 0; i < products.length; i++) {
     // Loop through all the products
-    var product = products[i]; // Set a local variable
+    let product = products[i]; // Set a local variable
     if (product.price < maximumPrice) {
     myFilteredArray.push(product);
     }
@@ -1169,11 +1287,11 @@ console.log(myFilteredArray);
 
     // A SIMPLER WAY
 
-var maximumPrice = 60.0;
-var myFilteredArray = products.filter(function (product) {
-    return product.price < maximumPrice;
+let maximumPrice1 = 60.0;
+let myFilteredArray1 = products.filter(function (product) {
+    return product.price < maximumPrice1;
 });
-console.log(myFilteredArray);
+console.log(myFilteredArray1);
 
 
 
@@ -1223,11 +1341,11 @@ function logWord() {
 logWord() // This is to run the function
 
 
-function logWord(theWord) {
+function logWord1(theWord) {
     console.log(theWord);
 }
 
-logWord("Hello");
+logWord1("Hello");
 // Output: Hello
 
 
@@ -1276,21 +1394,21 @@ petTest3.introduction();
     // MULTIPLE ARGUMENTS
 
 function addTwoNumbers(numberOne1, numberTwo2) {
-    var sum = numberOne1 + numberTwo2;
+    let sum = numberOne1 + numberTwo2;
     console.log(sum);
 }
 
 addTwoNumbers(3, 4);
 // Output: 7
 
-var result = addTwoNumbers(3, 12); // ASSIGN TO VARIABLE
+let result6 = addTwoNumbers(3, 12); // ASSIGN TO VARIABLE
 
-console.log(result);
+console.log(result6);
 
     // RETURN FROM A FUNCTION   return var;      CODE STOPS
 
 function doubleNumber(number1one) {
-    var double = number1one * 2;
+    let double = number1one * 2;
     return double; // Execution stops here
     console.log("This will never run");
 }
@@ -1299,9 +1417,9 @@ function addThreeNumbers(num1, num2, num3) {
     return num1 + num2 * num3;
 }
 
-var result = addThreeNumbers(3, 8, 3);
+let result7 = addThreeNumbers(3, 8, 3);
 
-console.log(result);
+console.log(result7);
 
     // VARIABLE INSIDE VS OUTSIDE OF FUNCTION
 
@@ -1322,7 +1440,7 @@ myFunction();
     // WHAT IS THIS??
 
 function pureFunction(input) {
-    var output = input;
+    let output = input;
     return output;
   }
   
@@ -1330,10 +1448,10 @@ function pureFunction(input) {
     window.output = input;
   }
   
-  var testA = pureFunction(1);
+  let testA = pureFunction(1);
   console.log(testA === 1);
   
-  var testB = impureFunction(1);
+  let testB = impureFunction(1);
   console.log(testB === undefined);
 
 
@@ -1360,19 +1478,20 @@ function changeh3color() {
 buttonh3color.oninput = changeh3color;
 
 
-    // SEE IF SOMETHING IS CHECKED
+    // SEE IF SOMETHING IS CHECKED addEventListener("event", function(e) {});
 
-let isItChecked = document.querySelector("#isChecked");
+const isItChecked = document.querySelector("#isChecked");
 
-let labelIsChecked = document.querySelector("#labelIsChecked")
+const labelIsChecked = document.querySelector("#labelIsChecked")
 
-function isChecked() {
+isItChecked.addEventListener("click", function(e) {
     if (isItChecked.checked) {
+        console.dir(e);
         labelIsChecked.innerHTML = "Yes, the checkbox is checked";
     } else {
         labelIsChecked.innerHTML = "No, the checkbox is not checked";
     }
-}
+});
 
 
     // IMPORT / EXPORT      (VARIABLES, FUNCTIONS, IFs etc)
