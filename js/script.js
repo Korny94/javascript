@@ -22,6 +22,8 @@
 console.log("This is script 1"); 
 // Output: This is script 1
 
+// ARRAY IS A VARIABLE THAT CAN STORE MULTIPLE VALUES
+
     // VIEW A TABLE OF THE ARRAY / OBJECT (TYPE IN CONSOLE!)
 
 let testArray = ["fish", "milk", "sausage"];
@@ -35,7 +37,8 @@ console.dir(testArray);
 
 console.log("This sentence is \n two lines");
 
-    // CREATE A NEW LINE IN CONSOLE WITH BACKTICKS `` STRING
+
+    // TEMPLATE LITERALS  CREATE A NEW LINE IN CONSOLE WITH BACKTICKS `` STRING 
 
 console.log(`This sentence
 is 3
@@ -171,6 +174,14 @@ Operator    Description                 Example     Result
             if ((isWeekend = saturday) || (isWeekend = sunday)) {
                 console.log("It's the weekend");
             }
+
+...         spread operator             SPREAD OUTPUT TO INDIVIDUAL CHARACTERS
+            // let name = "korny";
+            // console.log(Math.max(...name));
+            // Output: k o r n y
+            
+            // let numbers = [1, 2, 3, 4, 5];
+            // let maxNum = Math.max(...numbers);
 
 */
 
@@ -481,7 +492,7 @@ for (let i = 0; i <= 5; i++) {
 // Output (breaks loop on 4, continues on 5): 0 1 2 3 5
 
 
-    // "IF" & "ELSE" CONDITIONAL STATEMENTS
+    // "IF" & "ELSE" CONDITIONAL STATEMENTS  IF ELSE
 
 let isLoggedIn = true;
 
@@ -588,6 +599,24 @@ if ((pet === "cat") && (age < 2) && (isFriendly = true)) {
     }
 }
 
+    // TERNARY OPERATOR     IF/ELSE SHORTCUT    condition ? ifTrue : ifFalse;
+
+let adult4 = checkAge(21);
+
+console.log(adult4);
+
+function checkAge(age) {
+
+    return age >= 18 ? true : false;
+}
+
+checkWinner(true);
+
+function checkWinner(win) {
+    win ? console.log("YOU WIN!") : console.log("YOU LOSE!");
+}
+
+
     // OR Logical "or ||" OPERATOR
 
 if ((pet !== "cat") || (age >= 2) || (!isFriendly)) {
@@ -660,8 +689,9 @@ console.log(school);
 
 
 
-
     // LOOPS / for loop     REPEAT SOME CODE A CERTAIN AMOUNT OF TIMES
+
+    // let i be equal to 0; continue this loop as long as i is less than or equal to 5; increment i by 1;
 
     // Most used 
 for (let i = 0; i <= 5; i++){
@@ -832,6 +862,8 @@ console.log(shoppingList.length);
 
     // METHODS var.method()         (CAN HAVE SEVERAL IN 1 LINE OF CODE)
 
+    // CONVERT STRING TO NUMBER Number(var)
+
     // location.reload() - RELOAD REFRESH PAGE
 
     // .toString() - CONVERT NUMBER TO STRING
@@ -846,9 +878,23 @@ console.log(firstName1.toLowerCase());
 console.log(firstName1.toUpperCase());
 // Output transform letters to uppercase: ISABEL
 
+    // UNSHIFT()
+
+console.log(shoppingList, shoppingList.unshift("carrots"));
+// Output add item to start of array: (5) ['carrots', 'bananas', 'oranges', 'kiwis', 'milk'] 5
+
     // PUSH()
 console.log(shoppingList, shoppingList.push("cucumbers"));
 // Output add item to end of array: (5) ['bananas', 'oranges', 'kiwis', 'milk', 'cucumbers']
+
+    // SHIFT()
+
+    console.log(shoppingList, shoppingList.shift());
+// Output remove first element of array: (5) ['bananas', 'oranges', 'kiwis', 'milk', 'cucumbers'] 'carrots'
+
+    // POP()
+    console.log(shoppingList, shoppingList.pop());
+// Output remove last element of array: (4) ['bananas', 'oranges', 'kiwis', 'milk'] 'cucumbers'
 
     // UNSHIFT()
 console.log(shoppingList, shoppingList.unshift("cucumbers"));
@@ -865,6 +911,11 @@ console.log(shoppingList, shoppingList.pop());
     // SORT()
 console.log(shoppingList.sort());
 // Output alphabetically: ['bananas', 'oranges', 'kiwis', 'milk']
+
+    // REVERSE()    REVERSE OPPOSITE
+
+console.log(shoppingList.sort().reverse());
+// Output reversed alphabetically: (3) ['oranges', 'kiwis', 'bananas']
 
     // SORT() (NUMBERS)
 let numbers = [1, 2, 3, 4, 10];
@@ -964,7 +1015,7 @@ let result4 = shoppingList.filter(function (listItems) {
 console.log(result4);
 // Output array items that are not bananas: (3) ['oranges', 'kiwis', 'milk']
 
-    // RANDOM() GENERATE A SOMETHING RANDOM LIKE A NUMBER
+    // RANDOM() GENERATE  SOMETHING RANDOM LIKE A NUMBER
 
 let randomNumber = Math.random();
 
@@ -976,7 +1027,26 @@ let die = Math.floor(Math.random() * 6) + 1;
 console.dir(die);
 // Output A random number between 1 and 6 (rounded down "Math.floor"):
 
+    // Math.max() FIND THE HIGHEST VALUE
 
+    // Math.Min() FIND THE LOWEST VALUE 
+
+    // toLocaleString("locale", {style: ""})     DIFFERENT NUMBER FORMATTING SYSTEM BASED ON COUNTRIES
+
+let number5 = 123456.789;
+
+console.log(number5.toLocaleString("en-US")); 
+// Output US English number format: 123,456.789
+
+console.log(number5.toLocaleString("en-US", {style: "currency", currency: "USD"})); 
+// Output USD currency number format: $123,456.79
+
+console.log(number5.toLocaleString(undefined, {style: "percent"})); 
+// Output percent number format: 12 345 6789 %
+
+console.log(number5.toLocaleString(undefined, {style: "unit", unit: "celsius"})); 
+// Output celsius number format: 123 456,789 C
+// UNITS: KILOMETERS, MILES, METERS, KILOGRAMS ETC
 
     // LOWERCASE LETTERS VS UPPERCASE LETTERS (NOT THE SAME!)
 
@@ -993,7 +1063,7 @@ if (a === b1) {
 
 
 
-    // ARRAY ARRAYS
+    // ARRAY ARRAYS     A VARIABLE THAT CAN STORE MULTIPLE VALUES(elements)
 
 
 shoppingList.push("cucumbers");
@@ -1001,19 +1071,67 @@ shoppingList.push("cucumbers");
 console.log(shoppingList.sort(), shoppingList.length);
 // Output: (5) ['bananas', 'cucumbers', 'kiwis', 'milk', 'oranges'] 5
 
+    // 2D ARRAYS    AN ARRAY OF ARRAYS      NESTED ARRAYS
+
+const fruits = ["apples", "oranges", "bananas"];
+
+const vegetables = ["carrots", "onions", "potatoes"];
+
+const meats = ["egges", "chicken", "fish"];
+
+const groceryList = [fruits, vegetables, meats]
+
+console.table(groceryList);
+
+        // ACCESSING AND REPLACING ITEMS IN 2D ARRAYS     array[rowNum][colNum] = "";
+
+console.log(groceryList[0][1]);
+// Output: oranges
+
+        // LIST ITEMS SEPARATELY IN 2D ARRAYS USING FOR OF LOOPS
+
+for(let list of groceryList) {
+    for(let food of list) {
+        console.log(food);
+    }
+}
+
+
+
         // ACCESSING ITEMS IN ARRAYS
 
 let secondItem = shoppingList [1];
 console.log(secondItem);
 // Output: cucumbers
 
+        // CHANGE ELEMENTS INSIDE ARRAY
+
+let changeArray = ["element 2", "element 2", "element 3"];
+
+changeArray[0] = "element 1";
+
+console.log(changeArray);
+// Output: (3) ['element 1', 'element 2', 'element 3']
+
             // FOR LOOP TO ACCESS EVERY ARRAY ITEM
 
 for (let i = 0; i < shoppingList.length; i++) {
-    let shopL = shoppingList[i];
-    console.log(shopL);
+    console.log(shoppingList[i]);
 }
 // Output: bananas cucumbers kiwis milk oranges
+
+    // OR USE FOR OF LOOP 
+
+for (let foods of shoppingList) {
+    console.log(foods);
+}
+
+    // LOOP THROUGH ARRAY BACKWARDS
+
+    for (let i = shoppingList.length - 1; i >= 0; i--) {
+        console.log(shoppingList[i]);
+    }
+    // Output: oranges milk kiwis cucumbers bananas    
 
             // FOR LOOP TO ACCESS ONE ARRAY ITEM
 
@@ -1377,6 +1495,22 @@ petTest2.sayHello();
 petTest2["say hello"]();
 
 
+    // SEND VARIABLES FROM INSIDE CURLY BRACKETS TO A FUNCTION
+
+function startProgram() {
+    let userName = "Haley";
+    let age = 8;
+
+    happyBirthday(userName, age);
+}
+
+startProgram();
+
+function happyBirthday(userName, age) {
+    console.log("Happy birthday " + userName);
+    console.log("You are now " + age);
+}
+
     // ACCESS PROPERTY INSIDE AN OBJECT this.
 
 const petTest3 = {
@@ -1558,7 +1692,7 @@ isItChecked.addEventListener("click", function(e) {
 // localStorage.setItem("myArray", JSON.stringify(myStringedArray));
 
 
-    // GET STRINIFIED ARRAY / OBJECT FROM STORAGE
+    // GET STRINGIFIED ARRAY / OBJECT FROM STORAGE
 
 // const getArrayObject = localStorage.getItem("stringifiedArrayObject");
 
