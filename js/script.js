@@ -2,6 +2,15 @@
 
 // END OF BODY TAG LINK JAVASCRIPT FILE
 //  <script src="/js/script.js" type="module"></script>
+
+/*
+You can link to multiple JavaScript files from an HTML page, and variables and functions will be available in the order they are included.
+If you load multiple files like this:
+<script src="js/script1.js"></script>
+<script src="js/script2.js"></script>
+
+Anything declared in script1.js will be available to the code in script2.js.
+*/
     
 // DONT OVERWRITE VARIABLES!! 
 
@@ -54,6 +63,11 @@ so ${backticksString}`);
     // STOP EXECUTION OF THE CODE AT A CERTAIN PLACE
 
 // debugger;
+
+    // JSON JavaScript Object Notation
+
+        // JSON.stringify(var)  turn into string
+        // JSON.parse(var)      turn into object
 
 
     // OUTPUT AS A STRING
@@ -822,6 +836,18 @@ let dummyText3 = document.querySelector(".dummyText3").style.color = "blue";
 
 let heading2 = document.querySelector("h2");
 
+
+    // SELECT & MODIFY HTML ELEMENTS document.querySelectorAll("")
+
+const changeAllH6 = document.querySelectorAll("h6");
+
+changeAllH6.forEach((e) => {
+    e.style.color = "red";
+})
+
+        // You can also select inside a specific element: element.queryselectorALL("");
+
+
     // CHANGE
 
 heading2.innerHTML = "Wadup";
@@ -838,7 +864,7 @@ heading2.innerHTML = heading2.innerHTML + " hi";
 
 heading2.innerHTML = "";
 
-    // ADD OR REMOVE f.ex CLASS FOR ELEMENT .add("className") .remove("className")
+    // ADD class OR REMOVE class f.ex CLASS FOR ELEMENT .add("className") .remove("className")
 
 // heading1H1.classList.add("headingH1");
 //  OR
@@ -861,6 +887,12 @@ console.log(shoppingList.length);
 
 
     // METHODS var.method()         (CAN HAVE SEVERAL IN 1 LINE OF CODE)
+
+    // hide() - hide selected element
+
+    // show() - show selected element
+
+    // toggle() - toggle between values on selected element
 
     // CONVERT STRING TO NUMBER Number(var)
 
@@ -1198,8 +1230,9 @@ for (let names of animals) {
 let dog = {
     name: "Dexter",
     breed: "labrador",
+    color: "brown",
     "number of legs": 4,
-    isFriendly: true,
+    isFriendly: false,
     owner: null
 }
 console.log(dog);
@@ -1208,6 +1241,10 @@ console.log(dog);
         // ACCESS AN OBJECTS PROPERIES USING DOT . NOTATION (dog.name)
 console.log(dog.name);
 // Output: Dexter
+
+            // OR
+
+console.log(dog["name"]);
 
         // EVENT ACTION . NOTIATION DOT
 
@@ -1231,6 +1268,57 @@ let golfclubs = {
 
 console.log(golfclubs["Club-brand"]);
 // OUTPUT: Callaway
+
+        // CREATE HTML FROM OBJECTS
+
+const objectToHtml = document.querySelector("#objectToHtml");
+
+if (dog.isFriendly) {
+    dog.isFriendly = "Yes";
+} else {
+    dog.isFriendly = "No";
+}
+
+// USE INLINE HTML STYLING
+objectToHtml.innerHTML = `
+<h2 style="color: ${dog.color}">Name: ${dog.name}</h2>
+<p>Breed: ${dog.breed}</p>
+<p>Number of legs: ${dog["number of legs"]}</p>
+<p>Is it friendly? ${dog.isFriendly}</p>
+`
+
+        // SEE IF A STATEMENT HAS A "TRUTHY VALUE" CHECK TO SEE IF A VALUE IS undefined null false or 0  "falsy values"
+
+let petName = 1;
+
+if (petName) {
+    console.log(petName);
+}
+// Output petName value as long as its not "undefined, null, false or 0": 1
+
+        // ARRAY ARRAYS INSIDE OBJECTS OBJECT
+
+const petTest4 = {
+    type: "cat",
+    name: "Harold",
+    age: 12,
+    isFriendly: true,
+    colors: ["black", "white"]
+};
+
+console.log(petTest4.colors);
+// Output as array: (2) ['black', 'white']
+
+console.log(petTest4.colors.toString());
+// Output as string: black,white
+
+for(let i = 0; i < petTest4.colors.length; i++) {
+    console.log("Color " + (i + 1) + ": " + petTest4.colors[i]);
+        // OR
+    console.log(`Color ${i + 1}: ${petTest4.colors[i]}`);
+}
+// Output separate: Color 1: black  
+                //  Color 2: white
 
 
         // ARRAY ARRAYS OF OBJECT OBJECTS

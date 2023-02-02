@@ -1128,3 +1128,122 @@ const product3 = {
 product3.getExpired();
 
 
+
+
+/*
+Question 1
+Select the h4 element and change its value to Hello instead of Welcome.
+*/
+
+const helloChange = document.querySelector("h4");
+
+helloChange.innerHTML = "Hello";
+
+
+/*
+Question 2
+Select all the h4 elements on the page and change their margin-bottom style to -20px.
+*/
+
+
+const h4ChangeMargin = document.querySelectorAll("h4");
+
+h4ChangeMargin.forEach((e) => {
+    e.style.marginBottom = "-20px";
+})
+
+    // OR
+
+for(let i = 0; i < h4ChangeMargin.length; i++) {
+    h4ChangeMargin[i].style.marginBottom = "-20px";
+}
+
+
+/*
+Question 3
+Set the background colour of the second h4 element to red.
+*/
+
+document.querySelector("#secondH4").style.backgroundColor = "red";
+
+    // OR
+
+h4ChangeMargin[1].style.backgroundColor = "blue";
+
+
+/*
+Question 4
+Set the font size of the first h4 element on the page to 24px and its color to blue.
+*/
+
+const firstH4 = document.querySelector("h4");
+
+firstH4.style.fontSize = "24px";
+firstH4.style.color = "blue";
+
+
+/*
+Question 5
+Add span tags around the content of the third h4 element on the page.
+*/
+
+const thirdH4 = document.querySelector("#thirdH4");
+
+thirdH4.innerHTML = `<span>${thirdH4.innerHTML}</span>`;
+
+
+/*
+Question 6
+Add a new paragraph to the div with an id of content. Add the paragraph after the others.
+*/
+
+const divContent = document.querySelector("#content");
+
+divContent.innerHTML += `<p>Hello, this is a paragraph added in js</p>`;
+
+
+/*
+Question 7
+Add a new class called content-item to each paragraph in the div with a class of content.
+*/
+
+const eachP = divContent.querySelectorAll("p");
+
+eachP.forEach((e) => {
+    e.classList.add("content-item");
+}) 
+
+    // OR
+
+for(let i = 0; i < eachP.length; i++) {
+    eachP[i].classList.add("content-item");
+}
+
+/*
+Question 8
+Select the ul element on the page by its id and add a new list item to the beginning of the list.
+*/
+
+const ulAdd = document.querySelector("#ulAdd");
+
+ulAdd.innerHTML = `<li>Item 0</li>${ulAdd.innerHTML}`
+
+
+/*
+Question 9
+Programmatically remove the class from the ul element.
+*/
+
+const removeClass = document.querySelector(".removeClass");
+
+removeClass.classList.remove("removeClass");
+
+
+/*
+Question 10
+Hide the element with the id of hide.
+*/
+
+const hideElement = document.querySelector("#hide");
+
+hideElement.style.display = "none";
