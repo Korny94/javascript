@@ -11,6 +11,10 @@ If you load multiple files like this:
 
 Anything declared in script1.js will be available to the code in script2.js.
 */
+
+// REDIRECT USER TO ANOTHER PAGE document.location.href = "anotherPage.html";
+
+// STORE VALUES IN VARIABLES AND ALWAYS HAVE A DEFAULT VALUE IF VALUE IS FALSY
     
 // DONT OVERWRITE VARIABLES!! 
 
@@ -902,6 +906,17 @@ console.log(shoppingList.length);
 
     // .toPrecision(value) - Transform a number to a desired maximum length
 
+    // .map() - new array
+
+    // .createElement("div") - create html tags
+
+    // .append() - inserts (without removing anything) objects to html page
+
+    // .toFixed() - set desired decimal place
+    const fixedDecimal = 100;
+    console.log(fixedDecimal.toFixed(3));
+    // Output: 100.000
+
     // toLowerCase()
 console.log(firstName1.toLowerCase());
 // Output transform letters to lowecase: isabel
@@ -1146,6 +1161,9 @@ console.log(changeArray);
 // Output: (3) ['element 1', 'element 2', 'element 3']
 
             // FOR LOOP TO ACCESS EVERY ARRAY ITEM
+            // for loop = for (let i = 0; i < var.length; i++) {}
+            // for of loop = for (let var of var) {}
+            // for each loop = var.forEach((var) => {})
 
 for (let i = 0; i < shoppingList.length; i++) {
     console.log(shoppingList[i]);
@@ -1176,6 +1194,80 @@ for (let i = 0; i < shoppingList.length; i++) {
 }
 console.log(result);
 // Output: kiwis
+
+
+            // CREATE HTML FROM AN ARRAY OF OBJECTS 
+
+const petList = [
+    {
+        type: "dog",
+        color: "brown",
+        age: 14,
+        friendly: true,
+    },
+    {
+        type: "cat",
+        color: "orange",
+        age: 7,
+        friendly: false,
+    },
+    {
+        type: "duck",
+        color: "yellow",
+        age: 20,
+        friendly: true,
+    },
+];
+
+const arrayOfObjects = document.querySelector("#arrayOfObjects");
+
+for (let i = 0; i < petList.length; i++) {
+        console.log(petList[i])
+        let smiley = "😇";
+        if (!petList[i].friendly) {
+            smiley = "😈";
+        }
+
+        let petType = "Unknown type";
+        if (petList[i].type) {
+            petType = petList[i].type;
+        }
+
+        let petAge = "Age unknown";
+
+        if (petList[i].age) {
+            petAge = petList[i].age;
+        }
+
+        let petColor = "black";
+
+        if (petList[i].color) {
+            petColor = petList[i].color;
+        }
+
+        arrayOfObjects.innerHTML += `
+        <div id="arrayOfObjects">
+            <h5 style="color: ${petColor}">Type: ${petType}</h5>
+            <p>Age: ${petAge}</p>
+            <p>Friendly: ${smiley} </p>
+        </div>
+    `
+}
+
+    // OR
+
+// petList.forEach((pet) => {
+//     if (pet.friendly) {
+//         pet.friendly = "😇";
+//     } else {
+//         pet.friendly = "😈";
+//     }
+//     arrayOfObjects.innerHTML += `
+//         <h5 style="color: ${pet.color}">Type: ${pet.type}</h5>
+//         <p>Age: ${pet.age}</p>
+//         <p>Friendly: ${pet.friendly} </p>
+//     `
+// });
 
             // FOR LOOP TO ACCESS FILTERED ARRAY ITEMS
 
@@ -1553,6 +1645,129 @@ function logWord1(theWord) {
 
 logWord1("Hello");
 // Output: Hello
+
+function printMessage(message1, message2) {
+    console.log("This is message 1: " + message1);
+    console.log("This is message 2: " + message2);
+
+}
+
+printMessage("Message 1", "Message 2");
+// Output:  This is message 1: Message 1
+//          This is message 2: Message 2
+
+
+function sum(firstNumber, secondNumber) {
+    const result = firstNumber + secondNumber;
+    console.log("The result is: " + result);
+}
+
+sum(43, 88);
+// Output: The result is: 131
+
+
+    // USE PARAMETERS TO GET VALUES IN TO FUNCTIONS function value(value1, value2)
+    // USE RETURN TO GET VALUES OUT OF FUNCTIONS return variable/value
+    // NOTHING RUNS AFTER RETURN STATEMENT!!
+
+function multiply(number1, number2) {
+
+    const result = number1 * number2;
+    
+    return result;
+    
+}
+
+const functionResult = multiply(10, 10);
+
+console.log(functionResult);
+
+// NOW YOU CAN USE THE VALUES FOR THE REST OF YOUR CODE, REUSABLE FUNCTION
+
+function calculateCommission(amount) {
+    
+    const percentage = 40;
+    const commission = amount * (percentage / 100);
+    
+    return commission;
+}
+
+
+const commission = calculateCommission(100);
+
+console.log(commission);
+
+// LESS UPDATING, LESS BUGS, LESS REPEATABLE CODE, ONLY HAVE TO CHANGE 1 FUNCTION TO UPDATE A LOT OF CODE
+
+// CHECK PASSWORD VALIDITY
+
+function checkPassword(stringToCheck) {
+    
+    const lengthOfString = stringToCheck.length;
+    
+    if(lengthOfString >= 5) {
+        return true;
+    }
+    else {
+        return false;
+    }
+    
+}
+
+const passwordIsValid = checkPassword("some string");
+
+console.log(passwordIsValid);
+
+if(passwordIsValid) {
+    // let user register
+}
+else {
+    // inform user their password is invalid
+}
+
+
+// CHECK AGE 
+
+const inputAge = document.querySelector("#inputAge");
+
+const submitAge = document.querySelector("#submitAge");
+
+const labelAge = document.querySelector("#labelAge");
+
+function checkAge1(age) {
+    if (age >= 18) {
+        return document.location.href = "../html/oldEnough.html";
+    } else {
+        return "You are not old enough!"
+    }
+}
+
+
+submitAge.onclick = function() {
+    labelAge.innerHTML = checkAge1(inputAge.value)
+} 
+
+// CREATE HTML FROM FUNCTION
+
+const colours = ["red", "blue", "green"];
+
+function createList(items) {
+    
+    let listItems = "";
+    
+    for(let i = 0; i < items.length; i++) {
+        
+        listItems = listItems + "<li>" + items[i] + "</li>";
+    }
+    
+    const finalHtml = "<ul>" + listItems + "</ul>";
+    
+    return finalHtml;
+}
+
+const newHtml = createList(colours);
+
+console.log(newHtml);
 
 
     // FUNCTIONS AS PROPERIES OF OBJECTS

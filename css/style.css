@@ -1,0 +1,9 @@
+#arrayOfObjects,
+#arrayOfProductObjects,
+#productObject {
+    border: 1px solid red;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    width: fit-content;
+}

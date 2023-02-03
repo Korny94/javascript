@@ -1247,3 +1247,96 @@ Hide the element with the id of hide.
 const hideElement = document.querySelector("#hide");
 
 hideElement.style.display = "none";
+
+
+
+
+/*
+Loop through the array and display each object using HTML.
+
+Provide a default value for the price property if it is missing.
+
+If the product is sold out, display its name in red otherwise display it in green.
+
+Change the properties in the objects in the array to test your code.
+*/
+const products2 = [
+    {
+        name: "Fancy Product",
+        price: 40,
+        soldOut: true,
+    },
+    {
+        name: "Another Product",
+        soldOut: false,
+    },
+    {
+        name: "Cheap Product",
+        price: 10,
+        soldOut: true,
+    },
+];
+
+let arrayOfProductObjects = document.querySelector("#arrayOfProductObjects");
+
+for (let i = 0; i < products2.length; i++) {
+    console.log(products2[i]);
+
+    let defaultPrice = "Coming soon!";
+
+    if (products2[i].price) {
+        defaultPrice = products2[i].price;
+    };
+
+    let inStockColor = "green";
+
+    let inStock = "Product available";
+
+    if (products2[i].soldOut) {
+        inStockColor = "red";
+        inStock = "Product unavailable";
+    }
+
+    let productsName = products2[i].name;
+
+    arrayOfProductObjects.innerHTML += `
+        <div id="arrayOfProductObjects">
+            <h5>Product: ${productsName}</h5>
+            <p>Price: ${defaultPrice}</p>
+            <p style="color: ${inStockColor}">${inStock}</p>
+        </div>
+    `;
+};
+
+/*
+Display each property of the object using HTML.
+
+Provide a default value for the price property if it is missing.
+
+If the product is on sale, underline the name.
+
+Change the properties in the object to test your code.
+*/
+
+const product4 = {
+    name: "Fancy Product",
+    price: 99,
+    onSale: true,
+};
+
+let productName1 = product4.name;
+
+let defaultPrice1 = "Coming soon";
+
+let onSale;
+
+if (product4.onSale) {
+    onSale = "underline";
+}
+
+let productObject = document.querySelector("#productObject");
+
+productObject.innerHTML += `
+    <h5 style="text-decoration: ${onSale}">Product: ${productName1}</h5>
+    <p>Price: ${defaultPrice1}</p>
+`

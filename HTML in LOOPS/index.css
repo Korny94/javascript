@@ -1,0 +1,20 @@
+body {
+    background-color: rgb(0, 0, 30);
+}
+
+.card-body {
+    width: 20rem;
+    border: 1px solid black;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px 0px rgb(255, 255, 255, .9);
+}
+
+.user-list-row {
+    margin: auto;
+    justify-content: center;    
+    display: flex;
+    flex-wrap: wrap;
+}
