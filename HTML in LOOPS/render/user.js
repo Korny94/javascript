@@ -60,6 +60,18 @@ export function createCardLink(linkText, linkUrl) {
     return element;
 }
 
+export function createBootstrapElement(tagname, classes, children, text, link) {
+    const element = document.createElement(tagname);
+
+    if (Array.isArray(classes) && classes.length) {
+        element.classList.add(classes)
+    }
+
+    if (Array.isArray(children) && children.length) {
+        element.classList.add(children)
+    }
+}
+
 export function createHtmlObject(user) {
     const fullName = user.name.first + " " + user.name.last;
     const premium = user.account.premium ? "Premium User" : "Free User";
@@ -67,7 +79,7 @@ export function createHtmlObject(user) {
 
     const title = createCardTitle(fullName);
     const subtitle = createCardSubtitle(premium);
-    const text = createCardText(user.account.created);
+    const text = createCardText(user.account.created.toLocaleString());
     const email = createCardLink(user.contact.email, "mailto:${user.contact.email}");
     const phone = createCardLink(user.contact.phone, "tel:${user.contact.phone}");
 
