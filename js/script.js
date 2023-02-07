@@ -498,13 +498,17 @@ console.log("boolean is a", booleanTypeOf);
     // "BREAK" & "CONTINUE" STATEMENTS
 
 for (let i = 0; i <= 5; i++) {
-    if(i === 3) break;
+    if(i === 3) {
+        break; 
+    }
     console.log(i);
 }
 // Output (breaks loop on 4): 0 1 2 
 
 for (let i = 0; i <= 5; i++) {
-    if(i === 4) continue;
+    if(i === 4) {
+        continue;
+    }
     console.log(i);
 }
 // Output (breaks loop on 4, continues on 5): 0 1 2 3 5
@@ -1302,7 +1306,30 @@ console.log(numbers1);
 
 
     // forEach() EXECUTE A GIVEN FUNCTION FOR EACH ITEM INSIDE ARRAY
+    // CAN'T USE BREAK (STOP LOOP) OR CONTINUE (SKIP ITEM IN LOOP) STATEMENTS!!
             
+const colors = ["red", "green", "blue", "orange", "yellow"];
+
+colors.forEach(function(item) {
+    console.log(item);
+})
+
+    // forEach() EXECUTE A GIVEN FUNCTION FOR EACH ITEM INSIDE ARRAY OF OBJECTS
+
+const cars = [
+    {
+        brand: "BMW",
+        color: "green"
+    },
+    {
+        brand: "Toyota",
+        color: "red"
+    }
+];
+
+cars.forEach(function(objects, index) {
+    console.log("Number " + (index + 1) + ": " + objects.brand)
+})
 
 
             // FOR LOOP [i] TO LIST ARRAY VERTICALLY
@@ -1772,6 +1799,69 @@ function createList(items) {
 const newHtml = createList(colours);
 
 console.log(newHtml);
+
+
+    // PASSING FUNCTIONS INTO OTHER FUNCTIONS
+
+const myFunction1 = function() {
+    
+}
+
+function logArgument(someArgument) {
+    console.log("The argument is a " + typeof someArgument);
+}
+
+logArgument(myFunction1);
+// Output: The argument is a function
+
+
+    // setTimeout(function(), milliseconds) FUNCTION - WAIT X-MILLISECONDS BEFORE EXECUTING THE CODE
+
+const bgBodyColor = document.querySelector("body");
+
+setTimeout(function() {
+        // bgBodyColor.style.backgroundColor = "red";
+}, 1000)
+// Output: CHANGE BACKGROUNDCOLOR OF BODY TO RED AFTER 1 SECOND (1000 MILLISECONDS)
+
+
+        // OR
+
+function printSomething() {
+    console.log("Print this after 2 seconds");
+}
+
+setTimeout(printSomething, 2000);
+
+
+    // DISCO USING setTimeout()
+
+// bgBodyColor.style.backgroundColor = "red";
+
+function disco() {
+    if (bgBodyColor.style.backgroundColor = "red") {
+        setTimeout(function() {
+            bgBodyColor.style.backgroundColor = "blue";
+            repeat();
+        }, 1000)
+    } else if (bgBodyColor.style.backgroundColor = "blue") {
+        bgBodyColor.style.backgroundColor = "red"
+    }
+}
+
+// disco();
+
+function repeat() {
+    setTimeout(function() {
+        disco()
+    }, 1000)
+}
+
+// repeat();
+
+
+
+
 
 
     // FUNCTIONS AS PROPERIES OF OBJECTS

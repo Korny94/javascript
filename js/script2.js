@@ -1,3 +1,5 @@
+
+
 console.log ("This is script 2 - LESSON TASKS");
 // Output: This is script 2 - LESSON TASKS
 
