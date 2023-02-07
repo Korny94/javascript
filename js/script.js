@@ -892,6 +892,10 @@ console.log(shoppingList.length);
 
     // METHODS var.method()         (CAN HAVE SEVERAL IN 1 LINE OF CODE)
 
+    // includes() - does this include the term? search
+
+    // preventDefault() - stops the default event 
+
     // hide() - hide selected element
 
     // show() - show selected element
@@ -1147,7 +1151,7 @@ for(let list of groceryList) {
 
         // ACCESSING ITEMS IN ARRAYS
 
-let secondItem = shoppingList [1];
+let secondItem = shoppingList[1];
 console.log(secondItem);
 // Output: cucumbers
 

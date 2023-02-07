@@ -1340,3 +1340,177 @@ productObject.innerHTML += `
     <h5 style="text-decoration: ${onSale}">Product: ${productName1}</h5>
     <p>Price: ${defaultPrice1}</p>
 `
+
+
+
+
+
+/*
+Question 1
+Create a function called printSeason that accepts one argument (has one parameter) called season.
+
+Inside the function log the value of the argument.
+
+Call the function and pass in the value "summer` as the argument.
+*/
+
+function printSeason(season) {
+    console.log(season);
+}
+
+printSeason("summer");
+
+
+/*
+Question 2
+Create a function called printNumbers that has two parameters, firstNumber and secondNumber.
+
+Inside the function log each value that is passed in.
+
+Call the function and pass in two numbers as the arguments.
+*/
+
+function printNumbers(firstNumber2, secondNumber3) {
+    console.log("First #: " + firstNumber2, "Second #: " + secondNumber3);
+}
+
+printNumbers(3, 9);
+
+
+/*
+Question 3
+Create a function called addNumbers that has three parameters.
+
+Inside the function add all the paramters and return the result.
+
+Assign the result to a variable and assign the variable to the 
+innerHTML property of the DOM element with the class of total.
+*/
+
+function addNumbers(numm1, numm2, numm3) {
+    const result = numm1 + numm2 + numm3;
+    const total = document.querySelector(".total");
+    total.innerHTML = result; 
+    return result
+}
+
+addNumbers(1, 8, 3)
+
+// OR
+
+function addNumbers2(numm1, numm2, numm3) {
+    const result = numm1 + numm2 + numm3;
+    return result;
+}
+
+const total = addNumbers2(5, 10, 15);
+
+const totalContainer = document.querySelector(".total");
+totalContainer.innerHTML = total;
+
+
+/*
+Question 4
+Create a function called createGreeting that has one parameter.
+
+Inside the function add the value passed in to the string "Hello, my name is " and return the new string.
+
+Assign the returned value to the innerHTML property of the DOM element with the id of name.
+*/
+
+function createGreeting(name) {
+    const greeting = document.querySelector("#name");
+    greeting.innerHTML = "Hello, my name is " + name;
+}
+
+createGreeting("Greg");
+
+// OR 
+
+function createGreeting2(name) {
+    const greeting = "Hello, my name is " + name;
+    return greeting;
+}
+
+const greeting = createGreeting2("Gregory");
+
+const nameContainer = document.querySelector("#name");
+nameContainer.innerHTML = greeting;
+
+
+
+/*
+Question 5
+Create a function called printListItems that has one parameter.
+
+Inside the function, loop through the value passed in and log each item.
+
+Call the function and pass the sports array in as the argument.
+*/
+
+const sports = ["golf", "football", "cricket"];
+
+function printListItems(list) {
+    for (let i = 0; i < list.length; i++) {
+        console.log(list[i]);
+    }
+}
+
+printListItems(sports);
+
+
+/*
+Question 6
+Create a function called createGames that has one parameter.
+
+Inside the function, loop through the value passed in, create HTML 
+for each property in each object and return the HTML.
+
+Provide a default value for the released property if it is missing.
+
+Assign the return value of the function to the innerHTML property 
+of the DOM element with the class of game-container.
+*/
+
+const games = [
+    {
+        gameName: "Starcraft 2",
+        released: "2010",        
+    },
+    {
+        gameName: "Age of Empires II",       
+    },
+    {
+        gameName: "Cyberpunk 2077",
+        released: 2020
+    }
+];
+
+function createGames(gamesList) {
+
+    let html = "";
+
+    for (let i = 0; i < gamesList.length; i++) {
+
+        let releaseYear = "Unknown year";
+
+        if (gamesList[i].released) {
+            releaseYear = gamesList[i].released;
+        }
+
+        html += `
+            <div class="game">
+                <h5>${gamesList[i].gameName}<h5>
+                <p>Released: ${releaseYear}</p>
+            </div>
+        `
+    }
+
+    return html;
+
+}
+
+const newHtml = createGames(games);
+
+const gameContainer = document.querySelector(".game-container");
+gameContainer.innerHTML = newHtml;

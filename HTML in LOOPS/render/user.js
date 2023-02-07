@@ -18,6 +18,35 @@ export function createColumn() {
 }
 
 export function createCard(children) {
+
+    const cardBody = createBootstrapElement("div", ["card-body"], children);
+
+    const card = createBootstrapElement("div", ["card"], [cardBody]);
+
+    return card;
+}
+
+export function createCardTitle(titleText) {
+    return createBootstrapElement("h5", ["card-title"], undefined, titleText);
+}
+
+export function createCardSubtitle(subtitleText) {
+    return createBootstrapElement("h6", ["card-subtitle"], undefined, subtitleText);
+}
+
+export function createCardText(cardText) {
+    return createBootstrapElement("p", ["card-text"], undefined, cardText);
+}
+
+export function createCardLink(linkText, linkUrl) {
+    return createBootstrapElement("a", ["card-link"], undefined, linkText, linkUrl);
+}
+
+// OR
+
+/*
+export function createCard(children) {
+
     const element = document.createElement("div");
     element.classList.add("card");
 
@@ -32,6 +61,7 @@ export function createCard(children) {
 }
 
 export function createCardTitle(titleText) {
+
     const element = document.createElement("h5");
     element.classList.add("card-title");
     element.innerText = titleText;
@@ -39,6 +69,7 @@ export function createCardTitle(titleText) {
 }
 
 export function createCardSubtitle(subtitleText) {
+
     const element = document.createElement("h6");
     element.classList.add("card-subtitle");
     element.innerText = subtitleText;
@@ -46,6 +77,7 @@ export function createCardSubtitle(subtitleText) {
 }
 
 export function createCardText(cardText) {
+
     const element = document.createElement("p");
     element.classList.add("card-text");
     element.innerText = cardText;
@@ -53,12 +85,14 @@ export function createCardText(cardText) {
 }
 
 export function createCardLink(linkText, linkUrl) {
+
     const element = document.createElement("a");
     element.classList.add("card-link");
     element.innerText = linkText;
     element.href = linkUrl;
     return element;
 }
+*/
 
 export function createBootstrapElement(tagname, classes, children, text, link) {
     const element = document.createElement(tagname);
@@ -68,8 +102,18 @@ export function createBootstrapElement(tagname, classes, children, text, link) {
     }
 
     if (Array.isArray(children) && children.length) {
-        element.classList.add(children)
+        element.append(...children)
     }
+
+    if (text) {
+        element.innerText = text;
+    }
+
+    if (link && tagname === "a") {
+        element.href = link;
+    }
+
+    return element;
 }
 
 export function createHtmlObject(user) {

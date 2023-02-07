@@ -2,6 +2,17 @@ body {
     background-color: rgb(0, 0, 30);
 }
 
+nav {
+    background-color: white;
+    padding: .5rem;
+    border-radius: .2rem;
+}
+
+#inputSearch,
+#submitSearch {
+    padding: .3rem;
+}
+
 .card-body {
     width: 20rem;
     border: 1px solid black;
