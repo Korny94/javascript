@@ -12,6 +12,8 @@ If you load multiple files like this:
 Anything declared in script1.js will be available to the code in script2.js.
 */
 
+// addEventListener - MORE THAN 1 FUNCTION AT THE SAME TIME
+
 // REDIRECT USER TO ANOTHER PAGE document.location.href = "anotherPage.html";
 
 // STORE VALUES IN VARIABLES AND ALWAYS HAVE A DEFAULT VALUE IF VALUE IS FALSY
@@ -21,6 +23,8 @@ Anything declared in script1.js will be available to the code in script2.js.
 // TYPE "document" IN CONSOLE TO VIEW THE WEBSITES HTML
 // TYPE "screen" IN CONSOLE TO VIEW SCREEN INFO
 // TYPE "console.dir(document)" TO VIEW ALL POTENTIAL PROPERTIES (WAYS TO CHANGE THE WEBSITE)
+
+// INSIDE query() TARGET LIKE YOU DO IN CSS! class * = all child elements and grandchildren
 
 // IN CONSOLE, MANIPULATE THE DOM
 // document.querySelector(); (SELECT 1 ELEMENT)
@@ -68,7 +72,7 @@ so ${backticksString}`);
 
 // debugger;
 
-    // JSON JavaScript Object Notation
+    // JSON JavaScript Object Notation OBJECT TO STRING, STRING TO OBJECT
 
         // JSON.stringify(var)  turn into string
         // JSON.parse(var)      turn into object
@@ -398,6 +402,24 @@ let remainder = thirteen % five;
 
 console.log("the remainder of 13 divided by 5 is", remainder);
 // Output: the remainder of 13 divided by 5 is 3
+
+const table = document.querySelector("table");
+
+            // HIGHLIGHT TARGET EVERY X 
+
+for(let i = 1; i <= 10; i++) {
+    
+    let className = "";
+    
+    if(i % 4 === 0) {
+        className = "highlight";
+    }
+    
+    table.innerHTML += `<tr class="${className}">
+                        <td>${i}</td>
+                        <td>Text content</td>
+                    </tr>`;
+}
 
 
     // EXPONENTIATION NUMBERS ** 3^4 (3*3*3*3)
@@ -893,6 +915,28 @@ console.log(shoppingList.length);
 // Output nr of items: 4
 
 
+    // .disabled make element unusable unclickable
+
+// var.disabled = true; - UNCLICKABLE 
+// var.disabled = false; - CLICKABLE
+
+    // .type    CHANGE AN ELEMENTS TYPE, SHOW HIDE PASSWORD
+
+// var.type = "text"; - textfield = show password
+// var.type = "password"; - password = hide password
+
+
+    // .dataset.htmlvariable    GET STORED VARIABLES FROM HTML ELEMENTS
+
+const divs = document.querySelectorAll("#priceContainer > *") // TARGET DIRECT CHILD ELEMENTS
+
+
+for (let i = 0; i < divs.length; i++) {
+    divs[i].onclick = function(event) {
+            event.target.innerHTML = "Price: " + event.target.dataset.price;
+    }
+}
+
 
     // METHODS var.method()         (CAN HAVE SEVERAL IN 1 LINE OF CODE)
 
@@ -904,7 +948,7 @@ console.log(shoppingList.length);
 
     // show() - show selected element
 
-    // toggle() - toggle between values on selected element
+    // toggle() - toggle between values on selected element ON OFF ADD REMOVE
 
     // CONVERT STRING TO NUMBER Number(var)
 
@@ -918,7 +962,9 @@ console.log(shoppingList.length);
 
     // .createElement("div") - create html tags
 
-    // .append() - inserts (without removing anything) objects to html page
+    // .append() - inserts (without removing anything) string and or objects to html page
+
+    // .appendChild() - inserts (without removing anything) objects to html page
 
     // .toFixed() - set desired decimal place
     const fixedDecimal = 100;
@@ -1003,7 +1049,7 @@ const secondLetter = userNamed.charAt(1);
 console.log(secondLetter);
 // Output: o
     
-    // trim() GET RID OF EMPTY SPACES NEXT TO STRINGS
+    // trim() REMOVE EMPTY GET RID OF EMPTY SPACES NEXT TO STRINGS
 
 const emptySpaces = "   Hello    ";
 
@@ -1085,6 +1131,24 @@ console.dir(die);
     // Math.max() FIND THE HIGHEST VALUE
 
     // Math.Min() FIND THE LOWEST VALUE 
+
+    // stopPropagation() STOP EVENT BUBBLING "WHERE YOU CLICK IS WHERE THE EVENT HAPPENS, AND NOT TO ITS PARENT"
+
+const div1 = document.querySelector("#div1");
+
+const div2 = document.querySelector("#div2");
+
+div1.onclick = function(event) {
+    console.dir(event.target);
+    console.dir(this.target);
+
+    div1.style.backgroundColor = "yellow"
+}
+
+div2.onclick = function(event) {
+    event.stopPropagation(); // THIS WILL STOP DIV1 FROM BEING AFFECTED
+}
+
 
     // toLocaleString("locale", {style: ""})     DIFFERENT NUMBER FORMATTING SYSTEM BASED ON COUNTRIES
 
@@ -1371,8 +1435,84 @@ console.log(dog["name"]);
 
         // EVENT ACTION . NOTIATION DOT
 
+        // this. (target select the parent element )
+
+        // event.target (target select the element being clicked / where the event happened)
+
             //.onclick          (button)
             //.onchange         (range)
+            // .onkeyup - USE THIS TO GET EVERY VALUE (INSTEAD OF onkeydown or onkeypress)
+            // .onmouseover - RUN FUNCTION WHEN MOUSE IS HOVERING OVER
+            // .onmouseout - RUN FUNCTION WHEN MOUSE LEAVES
+
+            // .onmousedown
+
+const mouseDownBtn = document.querySelector("#mouseDownBtn");
+
+const mouseDownCount = document.querySelector("#mouseDownCount");
+
+const textBoxes = document.querySelector("#textBoxes");
+
+let count6;
+
+let countId;
+
+function mouseDown() {
+    mouseDownBtn.innerHTML = "Release to stop count";
+
+    textBoxes.innerHTML = "";
+
+    count6 = 0;
+
+    mouseDownCount.innerHTML = 0;
+
+    
+    countId = setInterval(function() {
+        count6++;
+        mouseDownCount.innerHTML = count6;
+    }, 1000)
+}
+
+function mouseUp() {
+    clearInterval(countId);
+
+    mouseDownBtn.innerHTML = "Press & Hold to count";
+
+    for (let i = 1; i <= count6; i++) {
+        textBoxes.innerHTML += `<div id="textBoxDiv"><input type="text" id="textBox" placeholder="Input ${i}"></input></div>`
+
+    }
+    
+}
+
+mouseDownBtn.onmouseup = mouseUp;
+
+mouseDownBtn.onmousedown = mouseDown;
+
+
+            // .onscroll - RUN FUNCTION WHEN YOU SCROLL window.onscroll not document
+
+const nav = document.querySelector("nav");
+
+function handleScroll() {
+//    console.log(window.scrollY);
+
+    const scrolledY = window.scrollY;
+
+    if(scrolledY > 10) {
+        nav.classList.add("nav");
+    } else {
+        nav.classList.remove("nav");
+    }
+}
+
+
+window.onscroll = handleScroll;
+
+
+
+
+
 
         // EDIT AN OBJECT USING DOT . NOTATION (dog.color)
 let cat = {
@@ -1411,6 +1551,24 @@ objectToHtml.innerHTML = `
 `
 
         // SEE IF A STATEMENT HAS A "TRUTHY VALUE" CHECK TO SEE IF A VALUE IS undefined null false or 0  "falsy values"
+
+            // falsy values
+
+                // '' or "" or `` - empty strings
+                // 0 
+                // false
+                // undefined
+                // null
+                // NaN
+
+const testC = "";
+
+if (testC) {
+    console.log("truthy");
+} else {
+    console.log("falsy");
+} 
+
 
 let petName = 1;
 
@@ -1696,6 +1854,20 @@ function sum(firstNumber, secondNumber) {
 sum(43, 88);
 // Output: The result is: 131
 
+        // FUNCTION INSIDE FUNCTION 
+
+function receivingFunction(callback) {
+    if (typeof callback === "function") {
+        callback()
+    }
+}
+
+const callbackFunction = function() {
+    console.log("I am a callback function")
+}
+
+receivingFunction(callbackFunction);
+
 
     // USE PARAMETERS TO GET VALUES IN TO FUNCTIONS function value(value1, value2)
     // USE RETURN TO GET VALUES OUT OF FUNCTIONS return variable/value
@@ -1858,6 +2030,21 @@ function repeat() {
 }
 
 // repeat();
+
+
+    // setInterval(function(), milliseconds) - Run a function every x-milliseconds 
+
+    // COUNT TO 5 - COUNTER TIMER CLOCK
+
+let count2 = 0;
+
+const intervalId = setInterval(function() {
+    count2++;
+    if (count2 === 5) {
+        clearInterval(intervalId)
+    }
+    console.log(count2);
+}, 1000);
 
 
 
@@ -2094,3 +2281,149 @@ isItChecked.addEventListener("click", function(e) {
 // const getArrayObject = localStorage.getItem("stringifiedArrayObject");
 
 // const parsedArrayObject = JSON.parse(getArrayObject);
+
+
+
+
+    // APIs
+
+/*
+GET = Get data from API / Server
+
+POST, PUT & PATCH = Send data to API
+
+DELETE = Send deleterequest to API
+*/
+
+// async BEFORE THE FUNCTION 
+// await BEFORE THE FETCH CALL (YOU CAN ONLY USE AWAIT IN ASYNC FUNCTIONS)
+
+
+const url = "https://api.noroff.dev/api/v1/cat-facts";             // Storing the API in a variable
+
+const resultsContainer = document.querySelector("#results");    // Selecting and storing an element in a variable 
+
+async function getFacts() {                                     // Making an async function
+
+    const response = await fetch(url);                          // Make a promise, with await = wait until you get what you need to make the call
+
+    const results = await response.json();                      // Make a promise, with await = now you get the data that is being returned from the API call
+
+    const facts = results;
+
+    resultsContainer.innerHTML = "";
+
+    for (let i = 0; i < facts.length; i++) {
+        console.log(facts[i].text);
+
+        if (i === 3) {
+            break;
+        }
+
+        resultsContainer.innerHTML += `<div id="result">${facts[i].text}</div>`;
+    }
+
+}
+
+getFacts()
+
+
+
+
+
+
+
+// DEFAULT PARAMETER VALUES
+
+function printMessage2(message = "No message provided") {
+    console.log(message) // BEST WAY
+
+        // OR
+
+    if (!message) {
+        message = "No message provided";
+    }
+    console.log(message)
+}
+printMessage2()
+// Output (default): No message provided.       Else = undefined
+
+printMessage2("Hello")
+// Output: Hello
+
+
+function sum1(numA = 0, numB = 0) {
+    return numA + numB;
+}
+// Output (default): 0
+
+const result8 = sum1(3, 5);
+
+console.log("result: ", result8)
+// Output: 8
+
+
+
+
+
+
+// REUSABLE HTML FUNCTION
+
+    // TYPES = warning, error and succes
+    // MESSAGE = "Anything you want"
+
+function createMessage(type = "success", message = "No message") {
+
+    const html = `<div class="message ${type}">${message}</div>`;
+
+    return html;
+
+}
+
+const messageContainer = document.querySelector("#messageContainer");
+
+const message = createMessage("warning", "Be careful!");
+
+messageContainer.innerHTML = message;
+
+
+
+
+
+
+// try, catch - & finally - block:  Do something to find errors     
+
+function getSomething() {
+
+}
+
+try {
+    getSomething()
+    console.log("It found getSomething()")
+} catch(error) {
+    console.log("ERROR, getSomething() was not found")
+} finally {
+    console.log("This will run either way");
+}
+
+    // ERROR HANDLING
+
+
+const url2 = "https://api.noroff.dev/api/v1/cat-factss";             // Storing the API in a variable
+
+async function getFacts2() {                                        // Making an async function
+
+    try {
+        const response = await fetch(url2);                          // Make a promise, with await = wait until you get what you need to make the call
+
+        const results = await response.json();                      // Make a promise, with await = now you get the data that is being returned from the API call
+    
+        console.log(results)
+    } catch (error) {
+        console.log("An error ocurred");
+    } 
+
+
+}
+
+getFacts2()
