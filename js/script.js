@@ -940,6 +940,10 @@ for (let i = 0; i < divs.length; i++) {
 
     // METHODS var.method()         (CAN HAVE SEVERAL IN 1 LINE OF CODE)
 
+    // startsWith() - determine whether a string begins with the characters of a specific string
+
+    // endsWith() - determine whether a string ends with the characters of a specific string
+
     // includes() - does this include the term? search
 
     // preventDefault() - stops the default event 
@@ -1115,6 +1119,60 @@ let result4 = shoppingList.filter(function (listItems) {
 });
 console.log(result4);
 // Output array items that are not bananas: (3) ['oranges', 'kiwis', 'milk']
+
+
+// NUMBERS.filter()
+const numbers2 = [1, 2, 4, 6, 9, 13, 14, 17, 20];
+
+const filteredNumbers = numbers2.filter((number) => {
+    if (number > 7) {
+        return true;
+    }
+})
+
+console.log(filteredNumbers);
+// Output only numbers over 7: (5) [9, 13, 14, 17, 20]
+
+
+// STRINGS.filter()
+
+const names1 = ["Alice", "Anders", "Ben", "Mari", "Marie", "Xander"];
+
+const filteredNames = names1.filter((name) => {
+    if (!name.toLowerCase().startsWith("a")) {
+        return true;
+    }
+})
+
+console.log(filteredNames);
+// Output only strings that doesnt start with a: (4) ['Ben', 'Mari', 'Marie', 'Xander']
+
+
+// arrayOfObjects.filter()
+
+const people1 = [
+    {
+        id: 1,
+        name: "Alice"
+    },
+    {
+        id: 2,
+        name: "Anders"
+    },
+    {
+        id: 3,
+        name: "Mari"
+    }
+]
+
+const filteredPeople1 = people1.filter((person) => {
+    if (person.name.toLowerCase().startsWith("m")) {
+        return true;
+    }
+})
+
+console.log(filteredPeople1);
+// Output only strings that doesnt start with m: {id: 3, name: "Mari"}
 
     // RANDOM() GENERATE  SOMETHING RANDOM LIKE A NUMBER
 
@@ -2305,24 +2363,23 @@ const resultsContainer = document.querySelector("#results");    // Selecting and
 
 async function getFacts() {                                     // Making an async function
 
-    const response = await fetch(url);                          // Make a promise, with await = wait until you get what you need to make the call
+        const response = await fetch(url);                          // Make a promise, with await = wait until you get what you need to make the call
 
-    const results = await response.json();                      // Make a promise, with await = now you get the data that is being returned from the API call
-
-    const facts = results;
-
-    resultsContainer.innerHTML = "";
-
-    for (let i = 0; i < facts.length; i++) {
-        console.log(facts[i].text);
-
-        if (i === 3) {
-            break;
-        }
-
-        resultsContainer.innerHTML += `<div id="result">${facts[i].text}</div>`;
+        const results = await response.json();                      // Make a promise, with await = now you get the data that is being returned from the API call
+    
+        const facts = results;
+    
+        resultsContainer.innerHTML = "";
+    
+        for (let i = 0; i < facts.length; i++) {
+            console.log(facts[i].text);
+    
+            if (i === 3) {
+                break;
+            }
+    
+            resultsContainer.innerHTML += `<div id="result">${facts[i].text}</div>`;
     }
-
 }
 
 getFacts()
@@ -2390,8 +2447,66 @@ messageContainer.innerHTML = message;
 
 
 
+// ARROW FUNCTIONS => NO FUNCTION KEYWORD
 
-// try, catch - & finally - block:  Do something to find errors     
+    // ONLY 1 ARGUMENT? Dont need to wrap them in brackets
+    // ONLY 1 LINE IN FUNCTION? MAKE THE WHOLE FUNCTION JUST 1 LINE WITHOUT CURLY BRACKETS
+    
+
+const logMessage1 = someArgumentName => console.log("This is an arrow function", someArgumentName);
+
+logMessage1("You feel me?");
+
+
+// THE "RETURN"-STATEMENT IS IMPLICIT 
+
+const subtract = (a = 0, b = 0) => a - b;
+
+const result9 = subtract(5, 3)
+
+console.log(result9);
+// DONT PUT THE FUNCTION CALL INSIDE THE LOG
+
+
+    // forEach using arrow function
+
+const array1 = ["blue", "red", "green"];
+
+array1.forEach(item => console.log(item));
+
+
+    // setTimeout using arrow function 
+
+setTimeout(() => console.log("setTimeout using arrow function"), 1000);
+
+
+
+
+
+    /*
+    SYNCHRONOUS code is where The code is called statement by statement and 
+    each statement waits for the previous one to finish before running. 
+    */
+    /*
+    ASYNCHRONOUS code doesn’t wait for the current statement to finish 
+    running before executing the next statement. 
+    */
+    /*
+    PROMISES are a way to execute code asynchronously. When we call a 
+    promise, our code doesn’t wait for a response, but moves on to the 
+    next line of code.
+    Sometimes what is executed in our fulfilled function also returns a 
+    promise. This is called promise chaining.
+    A Promise is in one of these states:
+        pending: initial state, neither fulfilled nor rejected.
+        fulfilled: meaning that the operation completed successfully.
+        rejected: meaning that the operation failed.
+
+    Fulfilled states are handled by a Promise’s then method.
+    Rejected states are handled by a catch method.
+    */
+
+// try, catch, finally & throw - block:  Do something to find errors     
 
 function getSomething() {
 
@@ -2408,22 +2523,189 @@ try {
 
     // ERROR HANDLING
 
-
-const url2 = "https://api.noroff.dev/api/v1/cat-factss";             // Storing the API in a variable
-
 async function getFacts2() {                                        // Making an async function
 
     try {
-        const response = await fetch(url2);                          // Make a promise, with await = wait until you get what you need to make the call
+        const url2 = "https://api.noroff.dev/api/v1/cat-facts";     // Storing the API in a variable
 
-        const results = await response.json();                      // Make a promise, with await = now you get the data that is being returned from the API call
+        const response = await fetch(url2);                         // Make a promise, with await = wait until you get what you need to make the call
+
+        const json = await response.json();                      // Make a promise, with await = now you get the data that is being returned from the API call
     
-        console.log(results)
-    } catch (error) {
+        console.log(json)                                       // ALWAYS LOG json TO FIND THE PROPERTIES YOU WANT TO FETCH
+        
+    } catch(error) {
         console.log("An error ocurred");
     } 
-
 
 }
 
 getFacts2()
+
+
+    // ERROR HANDLING
+
+const catchContainer = document.querySelector("#catchContainer");
+    
+async function catFacts() {                                     // Making an async function
+
+    try {
+        const url = "https://api.noroff.dev/api/v1/cat-facts";             // Storing the API in a variable
+
+        const response = await fetch(url);                          // Make a promise, with await = wait until you get what you need to make the call
+    
+        const json = await response.json();                      // Make a promise, with await = now you get the data that is being returned from the API call
+    
+        console.log(json);                                          // ALWAYS LOG json TO FIND THE PROPERTIES YOU WANT TO FETCH
+
+        const facts = json;
+            
+        for (let i = 0; i < facts.length; i++) {
+            console.log(facts[i].text);
+            if (i === 3) {
+                break;
+            }
+
+            catchContainer.innerHTML += `<div id="result">${facts[i].text}</div>`;
+        }
+    } catch (error) {
+        catchContainer.innerHTML = "There was an error";
+    }
+
+}
+    
+catFacts()
+
+
+    // then / catch syntax (USE ASYNC WAIT, BUT KNOW THIS INCASE YOU COME ACROSS IT)
+
+    const url3 = "https://api.noroff.dev/api/v1/cat-facts";
+
+fetch(url3)
+    .then(function(response) {
+        console.log(response);
+        return response.json();
+    })
+    .then(function(data) {
+        console.log(data);
+        createHTML1(data);
+    })
+    .catch(function(error) {
+        console.log(error);
+        console.log("There was an error bitch");
+    })
+
+const catchContainer1 = document.querySelector("#catchContainer1");
+
+function createHTML1(results) {
+    const facts = results;
+
+    for (let i = 0; i < facts.length; i++) {
+        console.log(facts[i].text);
+        if (i === 1) {
+            break;
+        }
+
+        catchContainer1.innerHTML += `<div id="result">${facts[i].text}</div>`;
+    }
+}
+
+
+    // API CALL TEMPLATE
+/*
+const urlName = "https://";
+const proxyName = "https://noroffcors.herokuapp.com/";
+
+const resultsContainerName = docuent.querySelector("");
+
+async function makeApiCall() {
+    try {
+        const response = await fetch(urlName);
+
+        const json = await response.json();
+
+        console.log(json);
+
+    } catch (error) {
+        console.log(error);
+        resultsContainerName.innerHTML = error;
+    }
+}
+
+makeApiCall()
+*/
+
+    // FREE API LISTS
+/*
+    https://apilist.fun/
+    https://rapidapi.com/collection/list-of-free-apis
+    https://github.com/public-apis/public-apis
+*/
+
+
+// EVERYTHING YOU NEED TO KNOW ABOUT API = Javascrpt 1 - Module 3 - More about calling APIs
+
+        // CORS Cross-Origin Resource Sharing
+
+const url5 = "https://elephant-api.herokuapp.com/elephants";
+const proxy = "https://noroffcors.herokuapp.com/";
+
+const corsFix = proxy + url5;
+
+
+async function makeApiCall() {
+
+    try {
+
+        const response = await fetch(corsFix);
+
+        const json = await response.json();
+
+        console.log(json);
+
+    } catch (error) {
+
+        console.log(error);
+
+    }
+}
+
+makeApiCall();
+
+
+
+
+// lkdwlfkw
+
+const url7 = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY";
+
+const nasaApi = document.querySelector("#nasaApi");
+
+async function nasaApi1() {
+    try {
+        const response = await fetch(url7);
+
+        const json = await response.json();
+    
+        console.log(json);
+    
+        const result = json.photos;
+    
+        console.log(result);
+    
+        for (let i = 0; i < result.length; i++) {
+    
+            if (i === 2) {
+                break;
+            }
+    
+            nasaApi.innerHTML += `<img src="${result[i].img_src}">`;
+        }
+    } catch(error) {
+        nasaApi.innerHTML = "Error: " + error;
+    }
+
+
+}
+
+nasaApi1()

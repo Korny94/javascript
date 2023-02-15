@@ -1749,3 +1749,188 @@ async function getCatFacts() {
 }
 
 getCatFacts()
+
+
+
+
+
+
+
+
+/*
+Question 1
+Give the below function's name parameter a default value of "John"
+*/
+function greet(name = "John") {
+    return `Hello ${name}!`;
+}
+
+console.log(greet("Mary"))
+
+
+
+/*
+Question 2
+Create a reusable function that accepts two parameters, then returns a dynamic HTML <div> element.
+The <div> it creates should insert one of the parameters as a class, and the other as the inner value. Similar to the below HTML:
+
+<div class="class">value</div>
+*/
+
+
+function reusableHtml(className = "defaultClass", innerValue = "No value") {
+    const html = `<div class="${className}">${innerValue}</div>`;
+
+    return html;
+}
+
+const reusableHtml1 = document.querySelector("#reusableHtml");
+
+const reusable1 = reusableHtml("error", "Hello, this is an error");
+
+reusableHtml1.innerHTML = reusable1;
+
+
+
+
+/*
+Question 3:
+Convert the below API call to use a try-catch-finally statement.
+*/
+async function getFact() {
+    try {
+        const response = await fetch("https://api.noroff.dev/api/v1/cat-factss");
+        const results = await response.json();
+        console.log(results[8].text);
+    } catch (error) {
+        console.log("An error occurred!", error)
+    } finally {
+        console.log("You're beautiful!");
+    }
+
+}
+
+getFact();
+
+
+
+
+
+
+/*
+Question 1
+Convert the below functions to one-line arrow functions.
+
+function greet(name) {
+  return `Hello ${name}!`;
+}
+
+function add(a, b) {
+  return a + b;
+}
+*/
+const greet1 = name => `Hello ${name}!`;
+  
+const add = (a, b) => a + b;
+
+
+
+/*
+Question 2
+Convert the below code to use the then/catch syntax instead.
+
+async function getCatFacts() {
+  try {
+    const response = await fetch("https://api.noroff.dev/api/v1/cat-facts");
+    const results = await response.json();
+    console.log(results.length);
+  } catch (error) {
+    console.log(error);
+  }
+}
+*/
+
+const url4 = "https://api.noroff.dev/api/v1/cat-facts";
+
+fetch(url4)
+    .then(response => response.json)
+    .then(results => console.log(results.length))
+    .catch(error => console.log("ERROR", error))
+
+
+
+
+
+/*
+Question 1
+Add headers to the below API call.
+
+You can choose whether to create a variable for the headers object seperately from the call and pass the variable in as the second parameter, or pass the headers object in directly.
+*/
+
+const API_URL = "https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=wat";
+
+const options = { "headers": {
+    "x-rapidapi-key": "f1f6bf4f35msh6bce51834ab65fep1142d8jsne932f1fff042",
+}};
+
+async function callUrbanDictionary() {
+  const response = await fetch(API_URL, options);
+  const results = await response.json();
+  console.log(results);
+
+}
+
+callUrbanDictionary();
+
+
+
+
+
+
+/*Lesson Task 1 Question
+Make a call to the following endpoint:
+
+https://raw.githubusercontent.com/bttmly/nba/master/data/teams.json
+Display the team name and city of the first 15 results, but exclude any team whose name begins with c.
+
+There will be a maximum of 15 results displayed if no teams' names begin with "C", and less than 15 displayed if there are teams whose names begin with "C".
+*/
+
+const url6 = "https://raw.githubusercontent.com/bttmly/nba/master/data/teams.json";
+
+async function makeApiCall2() {
+
+    try {
+        const response = await fetch(url6);
+
+        const json = await response.json();
+
+        console.log(json);
+
+        const teams = json;
+
+        for (let i = 0; i < teams.length; i++) {
+        
+            const teamName = teams[i].teamName;
+
+            const city = teams[i].location
+    
+           if (i === 15) {
+                break;
+           }
+    
+           if (teamName.toLowerCase().startsWith("c")) {
+                continue
+           }
+           console.log("Name of team: " + teamName + ". Location: " + city);
+        }
+    } catch (error) {
+        console.log("An error occurred", error);
+    }
+    
+}
+
+makeApiCall2()
+
+
