@@ -940,6 +940,9 @@ for (let i = 0; i < divs.length; i++) {
 
     // METHODS var.method()         (CAN HAVE SEVERAL IN 1 LINE OF CODE)
 
+    // scrollTo() - scroll to a desired place
+    // window.scrollTo(0, document.body.scrollHeight); (SCROLL TO BOTTOM OF PAGE)
+
     // startsWith() - determine whether a string begins with the characters of a specific string
 
     // endsWith() - determine whether a string ends with the characters of a specific string
