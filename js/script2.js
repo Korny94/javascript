@@ -1934,3 +1934,42 @@ async function makeApiCall2() {
 makeApiCall2()
 
 
+
+
+
+/*
+Make a call to the following endpoint:
+
+https://api.noroff.dev/api/v1/old-games/2
+
+Display the name, description and image of the game returned.
+*/
+
+const url9 = "https://api.noroff.dev/api/v1/old-games/2";
+
+const apiCall2 = document.querySelector("#apiCall");
+
+async function apiCall() {
+    try {
+        const response = await fetch(url9);
+        const json = await response.json();
+
+        console.log(json)
+
+        apiCall2.innerHTML = `
+            <h2>Name of Game: ${json.name}</h2>
+            <img src="${json.image}">
+            <br><br>
+            <b>Game description:</b>
+            <p>${json.description}</p>
+        `;
+
+    } catch(err) {
+        console.log(err)
+        apiCall2.innerHTML = `
+            <div class="message error">The was a ${err}</div>
+        `;
+    }
+}
+
+apiCall();

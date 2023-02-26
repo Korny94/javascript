@@ -940,6 +940,29 @@ for (let i = 0; i < divs.length; i++) {
 
     // METHODS var.method()         (CAN HAVE SEVERAL IN 1 LINE OF CODE)
 
+    // reset() - clear all input values
+
+    // test() - test if there is a match between a regular expression /hello/ and a string "oh hello there"
+const stringToTest = "Oh hello there";
+// the expression is placed between / /
+const expression = /hello/;
+const result10 = expression.test(stringToTest);
+console.log(result10);
+// true
+
+        // does this look like an email address?
+function validateEmail(email) {
+    const regEx = /\S+@\S+\.\S+/;
+    const patternMatches = regEx.test(email);
+    return patternMatches;
+    }
+        // You will not often have to create your own regular expressions. 
+        // You can see in the regex example above that they can be challenging to read. 
+        // Most of the time, you can find regular expressions on the Internet to test for patterns, 
+        // e.g., is a phone number in a particular format or is a password complicated enough.
+        // COMMON REGEX https://digitalfortress.tech/tips/top-15-commonly-used-regex/
+
+
     // scrollTo() - scroll to a desired place
     // window.scrollTo(0, document.body.scrollHeight); (SCROLL TO BOTTOM OF PAGE)
 
@@ -949,7 +972,12 @@ for (let i = 0; i < divs.length; i++) {
 
     // includes() - does this include the term? search
 
-    // preventDefault() - stops the default event 
+    // preventDefault() - stops the default event
+/*form.onsubmit = function() {
+    event.preventDefault();
+
+    console.log(event);
+}*/
 
     // hide() - hide selected element
 
@@ -1115,6 +1143,19 @@ let result3 = shoppingList.find(function (listItem) {
 });
 console.log(result3);
 // Output array item: oranges
+
+const people = [{ id: 1, name: "Alice"}, { id: 2, name: "Anders"}, { id: 3, name: "Mari"}];
+
+const person = people.find(findPerson);
+
+function findPerson(person) {
+    if(person.id === 2) {
+        return true;
+    }
+}
+
+console.log(person);
+// Output: {id: 2, name: "Anders"}
 
     // FILTER()
 let result4 = shoppingList.filter(function (listItems) {
@@ -2712,3 +2753,86 @@ async function nasaApi1() {
 }
 
 nasaApi1()
+
+
+
+    // QueryString (The part of the url that is after the questionmark "?")
+
+// document.location = url
+
+// document.location.search = fetch the QueryString
+
+const queryString = document.location.search;
+
+console.log(queryString);
+// Output: "websites url"
+
+const params = new URLSearchParams(queryString);
+
+console.log(params);
+// Ouput: "object with properties"
+
+        // Get a parameter from a QueryString
+
+const nameOfParameter = params.get("nameOfParameter")
+
+console.log(nameOfParameter);
+// Output example: id = 1234
+// Output example: name = ben
+// Output = null? = parameter isnt in the QueryString
+
+
+
+
+
+// FORM VALIDATION
+
+const firstNameForm = document.querySelector("#firstName");
+const firstNameError = document.querySelector("#firstNameError");
+const lastNameForm = document.querySelector("#lastName");
+const lastNameError = document.querySelector("#lastNameError");
+const emailForm = document.querySelector("#email");
+const emailError = document.querySelector("#emailError");
+const formSubmit = document.querySelector("#formSubmit");
+
+
+
+
+formSubmit.onclick = function() {
+    event.preventDefault();
+
+    console.log(event);
+
+    if (checkLength(firstNameForm.value, 0)) {
+        firstNameError.style.display = "none";
+    } else {
+        firstNameError.style.display = "block";
+    }
+
+    if (checkLength(lastNameForm.value, 3)) {
+        lastNameError.style.display = "none";
+    } else {
+        lastNameError.style.display = "block";
+    }
+
+    if (validateEmail(emailForm.value)) {
+        emailError.style.display = "none";
+    } else {
+        emailError.style.display = "block";
+    }
+
+}
+
+function checkLength(value, length) {
+    if (value.trim().length > length) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// function validateEmail(email) {
+//     const regEx = /\S+@\S+\.\S+/;
+//     const patternMatches = regEx.test(email);
+//     return patternMatches;
+//     }
