@@ -2685,3 +2685,100 @@ function checkLength(value, length) {
 //     const patternMatches = regEx.test(email);
 //     return patternMatches;
 //     }
+
+// JAVASCRIPT CLASS - CREATE A DEFAULT OBJECT (CLASS), THAT CAN BE REUSED
+
+class backpack {
+  // OR const backpack = class {}
+  constructor( // DEFINES PARAMETERS
+    name,
+    volumeL,
+    color,
+    pocketNum,
+    strapLengthL,
+    strapLengthR,
+    lidOpen
+  ) {
+    // DEFINE PROPERTIES
+    this.name = name;
+    this.volumeL = volumeL;
+    this.color = color;
+    this.pocketNum = pocketNum;
+    this.strapLengthL = strapLengthL;
+    this.strapLengthR = strapLengthR;
+    this.lidOpen = lidOpen;
+  }
+  // ADD METHODS
+  toggleLid(lidStatus) {
+    this.lidOpen = lidStatus;
+  }
+  newStrapLength(lengthL, lengthR) {
+    this.strapLength.left = lengthL;
+    this.strapLength.right = lengthR;
+  }
+}
+
+// ADD CLASS TO NEW OBJECTS:
+
+const schoolBackpack = new backpack(
+  "School Backpack",
+  30,
+  "gray",
+  15,
+  26,
+  26,
+  false
+);
+
+const hikingBackpack = new backpack(
+  "Hiking Backpack",
+  20,
+  "red",
+  10,
+  35,
+  35,
+  true
+);
+
+// ADD ATTRIBUTE REMOVE ATTRIBUTE
+// setAttribute("name", "value")
+// removeAttribute("name", "value")
+// NO VALUE ATTRIBUTE setAttribute("name", "")
+
+// ADD POP-UP POP UP POPUP
+// showModal()
+// closeModal()
+
+// GET USER LOCATION
+/*
+function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  }
+
+  function showPosition(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    var location = "Latitude: " + latitude + "<br>Longitude: " + longitude;
+    document.getElementById("user-location").innerHTML = location;
+  }
+*/
+
+// RANDOM COLOR GENERATOR
+/*
+const getRandomColor = () => {
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  };
+  */
+
+// GET ELEMENT BY NAME ATTRIBUTE
+
+// document.getElementsByName("name")
